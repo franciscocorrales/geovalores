@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 
-	<!-- header -->
+
 <div id="headerframe">
 	<div id="header">
 		<div id="header-logo">
