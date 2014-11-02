@@ -1,9 +1,21 @@
 	<!-- footer -->
 <div id="footerframe">
 	<div id="footer">
-		<div id="footer-nav"><a href="/" class="footer-nav-5346 active first"><span>Home</span></a>&nbsp;<span class="nav-divider">|</span>&nbsp;<a href="/portfolio/" class="footer-nav-5380  "><span>Portfolio</span></a>&nbsp;<span class="nav-divider">|</span>&nbsp;<a href="/packages/" class="footer-nav-5381  "><span>Packages</span></a>&nbsp;<span class="nav-divider">|</span>&nbsp;<a href="/services/" class="footer-nav-5441  "><span>Services</span></a>&nbsp;<span class="nav-divider">|</span>&nbsp;<a href="/about-us/" class="footer-nav-5357  "><span>About&nbsp;Us</span></a>&nbsp;<span class="nav-divider">|</span>&nbsp;<a href="/contact-us/" class="footer-nav-5382  last"><span>Contact&nbsp;Us</span></a></div>
+		<div id="footer-nav">
+		<a href="/" class="footer-nav-5346 active first"><span>Inicio</span></a>&nbsp;<span class="nav-divider">|</span>&nbsp;
+		<a href="/" class="footer-nav-5380  "><span>Quienes Somos</span></a>&nbsp;<span class="nav-divider">|</span>&nbsp;
+		<a href="/" class="footer-nav-5381  "><span>Comprar</span></a>&nbsp;<span class="nav-divider">|</span>&nbsp;
+		<a href="/" class="footer-nav-5441  "><span>Venta</span></a>&nbsp;<span class="nav-divider">|</span>&nbsp;
+		<a href="/" class="footer-nav-5382  last"><span>Contacto</span></a></div>
 		<div id="footer-extra"></div>
-		<p id="copyright"><?= date(y); ?> &copy; GeoValores</p>
+		<div id="social-header">
+			<div id="fb-header"><a target="_blank" href="#"> <?php echo img('images/facebook.png');?></a></div>
+		    <div id="twitter-header"><a target="_blank" href="#"><?php echo img('images/twitter.png');?></a></div>
+		    
+		</div>
+		<?php echo br(2); ?>
+		<p id="copyright">2014<?php  //echo date('Y'); ?> &copy; GeoValores</p>
+		
 	</div>
 	<!-- end footer -->
 </div>

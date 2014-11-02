@@ -56,8 +56,26 @@ class Inicio extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('Inicio');
+		$this->load->helper('html');
+		$title["title"] = "GeoValores";
+		$this->load->view('Inicio', $title);
 	}
+
+	public function mapa(){
+			$obj=$this->getmapainiciomodel();
+			
+			echo $obj;
+		}
+
+	public function _getModel(){
+			$this->load->model('InicioModel');
+		}
+
+	public function getmapainiciomodel(){
+			$this->_getModel();
+			$obj = $this->InicioModel->getmapainicio();
+			return $obj;
+		}
 }
 
 /* End of file welcome.php */

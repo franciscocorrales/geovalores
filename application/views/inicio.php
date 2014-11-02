@@ -40,8 +40,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>GeoValores</title>
-
+	<title><?php echo $title?></title>
+    <?php echo link_tag("css/reset.css");  ?>
+    <?php echo link_tag("css/global.css");  ?>
+    <?php // echo link_tag("css/template.css");  ?>
+    <?php echo link_tag("css/template.css");  ?>
+    <script type="text/javascript" src="script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    
+    <script src=<?php echo base_url().'script/googleMaP.js'?> ></script>
 	
 </head>
 <body>
@@ -56,12 +63,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="padding-left">
                             <div class="nav-content-left">
                                 <ul>
-                                    <li class="mainmenu-item"><a href="/"><span>Home</span></a></li>
-                                    <li class="mainmenu-item"><a href="/portfolio/"><span>Portfolio</span></a></li>
-                                    <li class="mainmenu-item"><a href="/packages/"><span>Packages</span></a></li>
-                                    <li class="mainmenu-item"><a href="/services/"><span>Services</span></a></li>
-                                    <li class="mainmenu-item"><a href="/about-us/"><span>About&nbsp;Us</span></a></li>
-                                    <li class="mainmenu-item"><a href="/contact-us/"><span>Contact&nbsp;Us</span></a></li>
+                                    <li class="mainmenu-itemvertical active"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Inicio</span></a></li>
+                                    <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Quienes Somos</span></a></li>
+                                    <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Comprar</span></a></li>
+                                    <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Venta</span></a></li>
+                                    <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Contacto</span></a></li>
                                 </ul>
                             </div>
 
@@ -124,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <h3>Casas Destacadas</h3>
                                 </div>
                                 <div class='stand-house'>
-                                    <img src="images/house.png" border="0"/>
+                                    <?php echo img('images/house.png');?>
                                 </div>
                                 <div class="description-house">
                                     <p>En primer lugar En esta publicidad es la necesidad de cualquier organización a la fama de su empresa en el mundo. Nuestro Café es en esta época. En esta publicidad es la necesidad.... </p>
@@ -141,16 +147,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                              
                                         </li>
                                         <li>
-                                            <label for="name" >Ciudad:</label>
-                                            <input type="text" name="ciudad" />
+                                            <label for="ciudad" >Ciudad</label>
+                                            <input class="grandes" type="text" name="ciudad" />
                                         </li>
                                         <li>
-                                            <label for="name" >Precio:</label>
-                                            <input type="text" name="precio" />
+                                            <label for="precio" >Precio</label>
+                                            <input class="grandes" type="text" name="precio" />
+                                        </li>
+                                        <li class="buscarli">
+                                            <label for="pisos" >Pisos</label>
+                                            <input class="pequenos" type="text" name="pisos" />
                                         </li>
                                         <li>
-                                            <label for="name" >Pisos:</label>
-                                            <input type="text" name="pisos" />
+                                            <label for="baños" >Baños</label>
+                                            <input class="pequenos" type="text" name="baños" />
+                                        </li>
+                                        <li class="botonli">
+                                            <button>Buscar</button>
                                         </li>
                                         
                                     </ul>

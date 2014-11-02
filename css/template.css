@@ -16,16 +16,18 @@
     background-color: #33302F;
     border-radius: 6px;
 }
-
-
-#mainnavigation ul#nav > li.selected > a, #mainnavigation ul#nav > li.active > a {
-    background-color: #E6E3DD;
-    color: #DF7E4B;
-}
-
 #mainnavigation ul#nav > li > a, #mainnavigation ul#nav > li > a:visited{
     color: #E6E3DD;
 }
+
+
+#mainnavigation ul#nav > li.selected > a, #mainnavigation ul#nav > li.active > a, #mainnavigation ul#nav > li:hover > a {
+    background-color: #439a00;
+    color: #002600;
+    border-radius: 5px;
+}
+
+
 
 #mainnavigation ul#nav, #mainnavigation ul#nav > li {
     padding: 7px;
@@ -77,22 +79,28 @@
     height: 41px;
 }
 
-.mainmenu-item:hover{
-    background: -moz-linear-gradient(89deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(255,255,255,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(89deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(89deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(89deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* ie10+ */
-    background: linear-gradient(1deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff',GradientType=0 ); /* ie6-9 */
+.mainmenu-itemvertical:hover, .mainmenu-itemvertical.active{
+    background: #002600;
 
+}
+
+.mainmenu-itemvertical > a {
+    color: black;
+    margin-left: 50px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+
+.mainmenu-itemvertical:hover a, .mainmenu-itemvertical.active a{
+    color: #439a00;
 }
 
 .moreNews {
     background-color: #fff;
     border-radius: 20px;
     margin-top: 20px;
-    height: 460px;
+    height: 513px;
 }
 
 
@@ -105,12 +113,12 @@
 }
 
 .content-description {
-    background-color: #999;
+    background-color: #FFF;
     border-radius: 15px;
     float: left;
     margin-left: 7px;
     width: 350px;
-    height: 311px;
+    height: 363px;
 }
 
 
@@ -123,12 +131,64 @@
 .read-more {
     float: right;
     width: 70px;
+    margin-top: -20px;
 }
 
 
 .stand-house {
     padding: 10px;
     width: 329px;
+}
+.description-house {
+    padding: 10px;
+    text-align: justify;
+}
+.form-search.content-description {
+    background: #cc6600;
+    color: white;
+    height: 325px;
+    margin-top: 20px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    margin-left: 0px;
+}
+
+.form-search form ul {
+    width: 318px;
+    margin: 32px 15px;
+}
+.buscarli{
+    float: left;
+    margin-right: 14px;
+}
+input.pequenos {
+    width: 147px;
+}
+input.grandes{
+    width: 315px;
+}
+
+.form-search form ul li label{
+    display: inherit;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.form-search form ul li h2 {
+    color: white;
+    font-size: 18px;
+}
+.botonli{
+    margin-top: 40px;
+    margin-left: 110px;
+}
+
+.botonli button {
+    background: #fd8900;
+    border: none;
+    border-radius: 15px;
+    width: 100px;
 }
 
 .newDate{
