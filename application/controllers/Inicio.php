@@ -76,6 +76,7 @@ class Inicio extends CI_Controller {
 			$obj = $this->InicioModel->getmapainicio();
 			return $obj;
 		}
+                
 }
 
 /* End of file welcome.php */

@@ -1,3 +1,23 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title><?php echo $title?></title>
+    <?php echo link_tag("css/reset.css");  ?>
+    <?php echo link_tag("css/global.css");  ?>
+    <?php // echo link_tag("css/template.css");  ?>
+    <?php echo link_tag("css/template.css");  ?>
+    <script type="text/javascript" src="script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    
+    <script src=<?php echo base_url().'script/googleMaP.js'?> ></script>
+	
+</head>
+<body>
+
 <?php 
 $logo = array(
           'src' => 'images/logo.png',

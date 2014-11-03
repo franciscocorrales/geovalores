@@ -214,5 +214,14 @@
 
 			
 		}
+                
+                public function InsertTable($tabla,$data) {
+                    try {
+                        $this->db->insert($tabla, $data); 
+                        return 'successful';
+                    } catch (Exception $exc) {
+                        return 'error';
+                    }
+                }
 	}
 ?>
