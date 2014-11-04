@@ -33,8 +33,9 @@
 
 	// Select all the rows in the markers table
 	
-
-	$query="SELECT * FROM markers WHERE 1";
+	$query1="SELECT * FROM publicaciones WHERE 1";
+	$results1 = $this->db->query($query1);
+	$query="SELECT * FROM details_fields WHERE 1";
 	$results = $this->db->query($query);
 	if (!$results) {  
 		header('HTTP/1.1 500 Error: Could not get markers!'); 
@@ -46,16 +47,39 @@
 
 	// Iterate through the rows, adding XML nodes for each
 	if($results->num_rows() > 0){
+			
+			 
+				foreach($results1->result() as $obj1){
+				$node = $dom->createElement("marker");  
+					  $newnode = $parnode->appendChild($node); 	
 				foreach($results->result() as $obj){
 					$arr[] = get_object_vars($obj);
-					$node = $dom->createElement("marker");  
-					  $newnode = $parnode->appendChild($node);   
-					  $newnode->setAttribute("name",$obj->name);
-					  $newnode->setAttribute("address", $obj->address);  
-					  $newnode->setAttribute("lat", $obj->lat);  
-					  $newnode->setAttribute("lng", $obj->lng);  
-					  $newnode->setAttribute("type", $obj->type);	
+					$i = 0;
+					  if ($obj1->idPublicacion == $obj->idPublicacion) {
+					 
+					  
+					 
+					  if ($obj->field_name == 'name') {  
+					  $newnode->setAttribute("name",$obj->field_value);
+					  }
+					  if ($obj->field_name == 'address') {  
+					  $newnode->setAttribute("address", $obj->field_value);  
+					  }
+					  if ($obj->field_name == 'lat') { 
+					  $newnode->setAttribute("lat", $obj->field_value);
+					  }
+					  if ($obj->field_name == 'lng') {   
+					  $newnode->setAttribute("lng", $obj->field_value);  
+					  }
+					  if ($i == 0) {
+					  	$newnode->setAttribute("type", $obj1->tipo_categoria);
+					  }
+					  	
+					  $i++;
+					}
 				}
+			}
+
 			}else{
 				return null;
 			}
