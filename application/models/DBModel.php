@@ -5,7 +5,9 @@
 
 		var $limite=17;
 		public function __construct(){
-			parent::__construct();
+			parent::__construct();         
+                        $this->load->database();
+                        date_default_timezone_set('America/Los_Angeles');
 		}
 
 		public function insert($tabla, $columnas, $valores, $condicion){

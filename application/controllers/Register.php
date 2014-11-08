@@ -19,9 +19,10 @@ class Register extends CI_Controller {
         
         public function saveUser()
         {
+           $this->load->model('DBModel');
            if (isset($_POST['txtName']) && isset($_POST['txtApellidos'])  && isset($_POST['txtTelefono'])  && isset($_POST['txtDireccion'])  && isset($_POST['txtPass']) && isset($_POST['txtNotificacion']) && isset($_POST['txtCorreo'])) {
-             $this->load->model('DBModel');
                 $data = array(
+                    'idUsuario' => '',
                     'name' => $_POST['txtName'] ,
                     'apellidos' => $_POST['txtApellidos'] ,
                     'telefono' => $_POST['txtTelefono'] ,
