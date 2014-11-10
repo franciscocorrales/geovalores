@@ -54,9 +54,21 @@ class Inicio extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct() 
+	{
+		
+		parent::__construct();
+		//carfamos la base de datos, los helpers
+		//librerías y el modelo en el constructor
+		$this->load->database('default');
+		$this->load->helper(array('form','url','date','html'));
+		$this->load->model('InicioModel');
+		
+	}
 	public function index()
 	{
-		$this->load->helper('html');
+		$this->load->helper(array('form','url','date','html'));
+		$this->load->helper('date');
 		$title["title"] = "GeoValores";
 		$this->load->view('Inicio', $title);
 	}
@@ -76,6 +88,33 @@ class Inicio extends CI_Controller {
 			$obj = $this->InicioModel->getmapainicio();
 			return $obj;
 		}
+
+	public function busqueda()
+	{
+		
+		if($this->input->post('buscar'))
+		{
+			
+			//limpiamos los campos del formulario, no necesitamos validar
+			
+			//los campos del formulario deben tener el mismo nombre
+			//que los de la base de datos a buscar, esto luego lo 
+			//recorremos para comprobar como vienen				
+			$campos = array('address', 'precio1');
+			
+			//envíamos los datos al modelo para hacer la búsqueda
+			$resultados = $this->InicioModel->nueva_busqueda($campos);
+			
+			if($resultados !== FALSE)
+			{
+				
+				echo  $resultados;
+				
+			}
+			
+		}
+		
+	}
                 
 }
 

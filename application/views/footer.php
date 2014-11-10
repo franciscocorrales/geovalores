@@ -14,7 +14,7 @@
 		    
 		</div>
 		<?php echo br(2); ?>
-		<p id="copyright">2014<?php  //echo date('Y'); ?> &copy; GeoValores</p>
+		<p id="copyright"><?php  echo date('Y'); ?> &copy; GeoValores</p>
 		
 	</div>
 	<!-- end footer -->

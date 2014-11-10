@@ -68,6 +68,32 @@
                         </div>   
                     </div>
                     <div class="content-rigth">
+                    <div class="form-search content-description">
+                                <form id="formbuscar" action="" method="post">
+                                     <h2>Busqueda</h2>
+                                     <a id="mostrar">Avanzadas</a>
+                                     <div class="ciudad">
+                                            <label for="ciudad" >Ciudad</label>
+                                            <input class="grandes" type="text" name="address" id="address" />
+                                     </div> 
+                                     <div class="precio">
+                                            <label for="precio" >Precio</label>
+                                            <input class="grandes" name="precio1" id="precio1" type="range"  min="50000" max="500000"  value="50000" onchange="rangevalue.value=value;spanvalue.value=value"/>
+                                            <input type="hidden" id="rangevalue"/>
+                                            <span id="spanvalue">50000</span>
+                                     </div>  
+                                     <div class="send">
+                                         <input type="button" id="send" name="buscar" value="Buscar">
+                                     </div>  
+                                     <div id="cmenu">
+                                     <label for="moneda" >Moneda</label>
+                                     <input class="pequeñas" type="text" name="moneda" id="moneda" />
+                                     <label for="tipo" >Tipo</label>
+                                     <input class="pequeñas" type="text" name="tipo" id="tipo" />
+                                     <a id="ocultar">X</a>
+                                     </div>
+                                </form>
+                            </div>
                         <div id="google_map"></div>
                         <div class="content-search">
                             <div class="stand-out content-description">
@@ -84,36 +110,7 @@
                                     <a href="" ><span>leer Más</span></a>
                                 </div>
                             </div>
-                            <div class="form-search content-description">
-                                <form action="" method="">
-                                    <ul>
-                                        <li>
-                                             <h2>Busqueda</h2>
-                                             
-                                        </li>
-                                        <li>
-                                            <label for="ciudad" >Ciudad</label>
-                                            <input class="grandes" type="text" name="ciudad" />
-                                        </li>
-                                        <li>
-                                            <label for="precio" >Precio</label>
-                                            <input class="grandes" type="text" name="precio" />
-                                        </li>
-                                        <li class="buscarli">
-                                            <label for="pisos" >Pisos</label>
-                                            <input class="pequenos" type="text" name="pisos" />
-                                        </li>
-                                        <li>
-                                            <label for="baños" >Baños</label>
-                                            <input class="pequenos" type="text" name="baños" />
-                                        </li>
-                                        <li class="botonli">
-                                            <button>Buscar</button>
-                                        </li>
-                                        
-                                    </ul>
-                                </form>
-                            </div>
+                            
                         </div>        
                     </div>
                         

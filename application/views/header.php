@@ -15,6 +15,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     <script src=<?php echo base_url().'script/googleMaP.js'?> ></script>
 	
+	<script type="text/javascript">
+	$(document).ready(
+	function () {
+	$('#precio1').change(function() {
+		var val = $(this).val();
+            
+       
+    $('#spanvalue').text(val);});
+	}
+	);
+	</script>
 </head>
 <body>
 
@@ -33,6 +44,7 @@ $logo = array(
 	<div id="header">
 		<div id="header-logo">
 			<a href="/"><?php echo img($logo);?></a>
+
 		</div>
 		<!-- main nav -->
 		<div id="mainnavigation">
@@ -66,6 +78,6 @@ $logo = array(
 				</ul>
 			</div>
 		</div>
-		
+		<a class="publicar" href="publicar">Publica su Anuncio gratis</a>
 	</div>
 </div>

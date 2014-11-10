@@ -65,7 +65,7 @@ html { overflow-y: scroll; }
 
 
 ul#breadcrumb { list-style: none; margin: 0px; padding: 0px; position: relative; top: -5px; }
-ul#breadcrumb li { font-size: 11px; margin-right: 5px; px; list-style: none; display: block; float: left; padding-right: 15px; height: 24px; line-height: 24px; color: #0066CC; background: transparent url(/img/breadcrumb.png) no-repeat right center; cursor: pointer;}
+ul#breadcrumb li { font-size: 11px; margin-right: 5px; list-style: none; display: block; float: left; padding-right: 15px; height: 24px; line-height: 24px; color: #0066CC; background: transparent url(/img/breadcrumb.png) no-repeat right center; cursor: pointer;}
 ul#breadcrumb li a { text-decoration: none; }
 
 
@@ -95,4 +95,4 @@ ul#breadcrumb li a { text-decoration: none; }
 #mainnavigation ul#nav > li > a:visited { font-size: 13px; color: #000; text-decoration: none; display: block; height: 28px; line-height: 28px; padding: 0px 16px 0 16px; }
 #mainnavigation ul#nav > li > a:hover { color: #000; text-decoration: none; display: block; }
 #mainnavigation ul#nav > li.selected > a, 
-#mainnavigation ul#nav > li.active > a { color: #000>; text-decoration: none; display: block; }
+#mainnavigation ul#nav > li.active > a { color: #000; text-decoration: none; display: block; }

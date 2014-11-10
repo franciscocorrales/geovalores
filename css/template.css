@@ -8,6 +8,38 @@
     height: 110px;
     max-width: 1024px;
 }
+#header .publicar{
+    background-color: #439a00;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+    color: #002600;
+    float: right;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px !important;
+    margin-right: 40px;
+    margin-top: 15px;
+    padding-left: 10px;
+    position: relative;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    width: 205px;
+
+}
+
+.publicar:after {
+    border-bottom: 30px solid transparent;
+    border-left: 40px solid #439a00;
+    border-top: 30px solid transparent;
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: 0;
+}
+#header .publicar:hover{
+    background-color: #002600;
+    color: #439a00;
+}
 
 #mainnavigation {
     bottom: -17%;
@@ -44,15 +76,15 @@
 
 #content {
     max-width: 1024px;
-     padding: 25px 0;
+    padding: 25px 0;
 }
 
- #map_canvas {
+#map_canvas {
     width: 800px;
     height: 400px;
- }
- #google_map {width: 100%; height: 400px;margin-top:0px;margin-left:auto;margin-right:auto;}
- 
+}
+#google_map {width: 100%; height: 400px;margin-top:0px;margin-left:auto;margin-right:auto; border-radius: 15px;}
+
 .content-left {
     float: left;
     height: 451px;
@@ -113,15 +145,59 @@
 }
 
 .content-description {
-    background-color: #FFF;
+    background-color: #fff;
     border-radius: 15px;
-    float: left;
-    margin-left: 7px;
-    width: 350px;
-    height: 363px;
+    float: none;
+    height: 213px;
+    width: 100%;
 }
 
 
+#formbuscar li {
+    float: left;
+    margin-left: 15px;
+}
+
+
+input[type='range'] {
+    -webkit-appearance: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #333;
+    background-color: #439a00;
+    height: 10px;
+    vertical-align: middle;
+}
+input[type='range']::-moz-range-track {
+    -moz-appearance: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #333;
+    background-color: #439a00;
+    height: 10px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    border-radius: 20px;
+    background-color: #FFF;
+    box-shadow:inset 0 0 10px rgba(000,000,000,0.5);
+    border: 1px solid #439a00;
+    height: 20px;
+    width: 20px;
+}
+input[type='range']::-moz-range-thumb {
+    -moz-appearance: none;
+    border-radius: 20px;
+    background-color: #FFF;
+    box-shadow:inset 0 0 10px rgba(000,000,000,0.5);
+    border: 1px solid #999;
+    height: 20px;
+    width: 20px;
+}
+
+.precio > span {
+    margin-left: -175px;
+    margin-top: -25px;
+    position: absolute;
+}
 .stand-house > img {
     border-radius: 12px;
     height: 171px;
@@ -136,6 +212,8 @@
 
 
 .stand-house {
+    float: left;
+    margin-top: -22px;
     padding: 10px;
     width: 329px;
 }
@@ -143,21 +221,22 @@
     padding: 10px;
     text-align: justify;
 }
+
 .form-search.content-description {
-    background: #cc6600;
+    background: none repeat scroll 0 0 #cc6600;
+    border-radius: 15px 15px 0px 0px;
     color: white;
-    height: 325px;
+    float: none;
+    height: 90px;
+    margin-bottom: 20px;
+    margin-left: 0;
     margin-top: 20px;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
-    margin-left: 0px;
+    width: 100%;
 }
 
-.form-search form ul {
-    width: 318px;
-    margin: 32px 15px;
+
+#formbuscar {
+    width: 100%;
 }
 .buscarli{
     float: left;
@@ -167,29 +246,67 @@ input.pequenos {
     width: 147px;
 }
 input.grandes{
+    width: 277px;
+}
+
+.form-search  label {
+    display: inherit;
+    margin-bottom: 10px;;
+}
+.ciudad {
+    float: left;
+    margin-left: 20px;
+    width: 288px;
+}
+.precio{
+    float: left;
+}
+.precio > label{
     width: 315px;
 }
-
-.form-search form ul li label{
-    display: inherit;
-    margin-bottom: 10px;
-    margin-top: 15px;
-}
-.form-search form ul li h2 {
+.form-search  h2 {
     color: white;
     font-size: 18px;
-}
-.botonli{
-    margin-top: 40px;
-    margin-left: 110px;
+    padding-left: 20px;
+    padding-top: 5px;
 }
 
-.botonli button {
-    background: #fd8900;
-    border: none;
-    border-radius: 15px;
-    width: 100px;
+#formbuscar > #cmenu {
+    background: none repeat scroll 0 0 #cc6600;
+    height: 24px;
+    margin-top: 39px;
+    position: absolute;
+    width: 714px;
+    z-index: 9999;
 }
+#cmenu > label {
+    float: left;
+    margin-left: 77px;
+    margin-right: 20px;
+}
+
+#cmenu .pequeñas {
+    float: left;
+}
+
+
+#formbuscar > #mostrar {
+    cursor: pointer;
+    margin-top: -25px;
+    position: absolute;
+}
+#cmenu > #ocultar {
+    cursor: pointer;
+    margin-left: 110px;
+}
+#send {
+    background: none repeat scroll 0 0 #fd8900;
+    border: medium none;
+    border-radius: 15px;
+    text-align: center;
+    width: 69px;
+}
+
 
 .newDate{
     font-family: Verdana Bold ;
@@ -225,10 +342,40 @@ input.grandes{
 .marker-edit label input, .marker-edit label select, .marker-edit label textarea {width: 60%;margin:0px;padding-left: 5px;border: 1px solid #DDD;border-radius: 3px;}
 
 /* Marker Info Window */
-h1.marker-heading{color: #585858;margin: 0px;padding: 0px;font: 18px "Trebuchet MS", Arial;border-bottom: 1px dotted #D8D8D8;}
-div.marker-info-win {max-width: 300px;margin-right: -20px;}
-div.marker-info-win p{padding: 0px;margin: 10px 0px 10px 0;}
-div.marker-inner-win{padding: 5px;}
+h1.marker-heading{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px;
+    background-color: #439a00;
+    color: #002600;
+    margin: 1px;
+    text-align: center;
+    border-radius: 2px 2px 0 0;
+}
+div.marker-inner-win .info-content{
+
+}
+div.marker-inner-win .info-content img {
+    height: 78px;
+    margin-left: 17px;
+    margin-top: 30px;
+    width: 160px;
+}
+
+.info-content > p {
+    float: left;
+    text-align: justify;
+    width: 50%;
+    margin-top: 27px;
+}
+html body div#siteframe div#content div.content-padding div.content-rigth div#google_map div.gm-style div div div div div.gm-style-iw div div.marker-info-win div.marker-inner-win span.info-content div.read-more{
+   margin-top: 40px;
+   color: #cc6600;
+}
+div.marker-info-win {width: 400px;margin-right: -20px;}
+
+div.marker-inner-win{padding: 5px;height: 220px;}
 button.save-marker, button.remove-marker{border: none;background: rgba(0, 0, 0, 0);color: #00F;padding: 0px;text-decoration: underline;margin-right: 10px;cursor: pointer;
 }
 
