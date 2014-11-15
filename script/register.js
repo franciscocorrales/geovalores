@@ -58,11 +58,9 @@ function registerUser(){
             success:function(data){
                 console.log(data);
                 if(data != null){
-                   /*Clientes.prototype.showSuccess('El cliente fue agregado satisfactoriamente.');
-                    var div = $('#divCont');
-                    $(div).fadeOut(1000);*/
+                    confirm("Se registro correctamente!!");
                 }else{
-                    //Clientes.prototype.showError('<span>Error:</span> El cliente no fue agregado.');
+                   confirm("No se registro correctamente!!");
                 }
             },
             error:function(){
