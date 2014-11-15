@@ -16,10 +16,10 @@
     color: #002600;
     float: right;
     font-weight: bold;
-    height: 42px;
-    line-height: 42px !important;
-    margin-right: -220px;
-    margin-top: 35px;
+    height: 60px;
+    line-height: 60px !important;
+    margin-right: 40px;
+    margin-top: 15px;
     padding-left: 10px;
     position: relative;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
@@ -28,9 +28,9 @@
 }
 
 .publicar:after {
-    border-bottom: 20px solid transparent;
+    border-bottom: 30px solid transparent;
     border-left: 40px solid #439a00;
-    border-top: 23px solid transparent;
+    border-top: 30px solid transparent;
     content: "";
     position: absolute;
     right: -40px;
@@ -380,10 +380,11 @@ button.save-marker, button.remove-marker{border: none;background: rgba(0, 0, 0, 
 }
 
 
-.errorClas{
+input.errorClas{
     border-color: #00F;
 }
 
+<<<<<<< a6b151b3d3bd7d1956be68c1e0e9c34d130a7218
 #form_email{
 
 	width: 846px;
@@ -589,4 +590,9 @@ textarea.form-input {
   position: relative;
   top: 2px;
   right: 2px;
+  }
+  
+.content-Register {
+    margin: 63px auto;
+    width: 70%;
 }

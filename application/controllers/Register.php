@@ -27,7 +27,8 @@ class Register extends CI_Controller {
                     'telefono' => $_POST['txtTelefono'],
                     'direccion' => $_POST['txtDireccion'],
                     'pass' => base64_encode($_POST['txtPass']),
-                    'correo' =>  $_POST['txtCorreo']
+                    'correo' =>  $_POST['txtCorreo'],
+                    'notificaciones' => $_POST['txtNotificacion']
                  );
                 
                  $result = $this->DBModel->InsertTable('usuarios',$data);

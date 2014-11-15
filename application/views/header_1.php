@@ -2,20 +2,18 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title><?php echo $title?></title>
+	<meta charset="utf-8">
+	<title><?php echo $title?></title>
     <?php echo link_tag("css/reset.css");  ?>
     <?php echo link_tag("css/global.css");  ?>
+    <?php echo link_tag("css/bootstrap.css");  ?>
     <?php // echo link_tag("css/template.css");  ?>
     <?php echo link_tag("css/template.css");  ?>
-    <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script src=<?php echo base_url().'script/googleMaP.js'?> ></script>
-    <script src=<?php echo base_url().'script/login.js'?> ></script>
-	
-
+     <script src=<?php echo base_url().'script/jquery-1.10.2.min.js'?> ></script>
+    
+   
 </head>
 <body>
 
@@ -29,42 +27,13 @@ $logo = array(
           
 );
 
-
-$username = array('name' => 'username', 'placeholder' => 'nombre de usuario');
-$password = array('name' => 'password',	'placeholder' => 'introduce tu password');
-$submit = array('name' => 'submit', 'id' => 'loginboton', 'value' => 'Iniciar sesión', 'title' => 'Iniciar sesión');
-$form = array('id' => 'loginform');
 ?>
 <div id="headerframe">
 	<div id="header">
-            <nav>
-                    <ul>
-                      <li id="login">
-                        <a id="login-trigger" href="#">
-                          Inicio de sesion<span>▼</span>
-                        </a>
-                        <div id="login-content">
-                          <?=form_open('/Login/new_user', $form)?>
-                            <fieldset id="inputs">
-                              <?=form_input($username)?><p><?=form_error('username')?>   
-                              <?=form_password($password)?><p><?=form_error('password')?>
-                            </fieldset>
-                            <fieldset id="actions">
-                              <?=form_submit($submit)?>
-					
-                              <label><input type="checkbox" checked="checked"> Keep me signed in</label>
-                            </fieldset>
-                          <?=form_close()?>
-                        </div>                     
-                      </li>
-                      <li id="signup">
-                        <a href="">Registacion</a>
-                      </li>
-                    </ul>
-                  </nav>
 		<div id="header-logo">
 			<a href="/"><?php echo img($logo);?></a>
-                </div>
+
+		</div>
 		<!-- main nav -->
 		<div id="mainnavigation">
 			<div id="nav-gutter">
@@ -97,6 +66,5 @@ $form = array('id' => 'loginform');
 				</ul>
 			</div>
 		</div>
-		<a class="publicar" href="<?php echo base_url(); ?>index.php/Register/register">Publica su Anuncio gratis</a>
 	</div>
 </div>

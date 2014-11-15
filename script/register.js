@@ -6,7 +6,7 @@ function registerUser(){
     var direccion = $('#txt-direccion').val();
     var pass = $('#txt-pass').val();
     var confPass = $('#txt-confPass').val();
-    var notificacion = $('#btn-notificacion').val();
+    var notificacion =  $('input:radio[name=btn-notificacion]:checked').val();
     var correo =  $('#txt-correo').val();
     var error = false;
     
