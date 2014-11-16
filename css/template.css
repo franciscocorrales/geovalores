@@ -128,7 +128,7 @@
 }
 
 .moreNews {
-    background-color: #fff;
+    background-color: #CDD0D3;
     border-radius: 20px;
     margin-top: 20px;
     height: 513px;
@@ -383,7 +383,6 @@ input.errorClas{
     border-color: #00F;
 }
 
-<<<<<<< a6b151b3d3bd7d1956be68c1e0e9c34d130a7218
 #form_email{
 
 	width: 846px;
@@ -637,3 +636,7 @@ ul li input, select, textarea {
     width: 45%;
 }
 
+ul, ol {
+    margin: 0 0 10px;
+    padding: 0;
+}
