@@ -31,6 +31,7 @@
                                 <input type="radio" name="btn-notificacion" value="0" >No
                             </li>
                             <li><input type="button" value="Registrarse" id="btn-save" onclick="registerUser();"</li>
+                            <li><a class="publicar-type" href="<?php echo base_url(); ?>index.php/Publicar/publicar" style="display: none">Siguiente</a></li>
                         </ul>
                         </div>
                     </div>

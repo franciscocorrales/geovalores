@@ -1,7 +1,5 @@
 <?php include_once('./application/views/header.php') ;?>
 <script src=<?php echo base_url().'script/ventas.js'?> ></script>
-
-
 <div id="siteframe">
     <div id="content">
         <div class="content-padding">
@@ -9,7 +7,7 @@
             <div class="box-publicar" id="publi-detalles">
                 <form name="info-venta" class="info-venta">
                     <ul>
-                        <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="alquileres" ></li>
+                        <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="construcciones" ></li>
                         <li><label>Titulo</label></li>
                         <li><input type="text" name="titulo" id="titulo" value="" required></li>
                          <li><label>Tiempo de la Publicacion</label></li>
@@ -21,21 +19,17 @@
                                 </optgroup>
                             </select>
                         </li>
-                        <li><label>Tipo Alquiler</label></li>
+                        <li><label>Tipo Construccion</label></li>
                         <li>
-                            <select name="tipo-Terreno" id="tipo-Terreno">
+                            <select name="tipo-construccion" id="tipo-construccion">
                                 <optgroup>
                                     <option value="casa">Casa</option>
                                     <option value="apartamento">Apartamento</option>
-                                    <option value="condominio">Condominio</option>
-                                    <option value="oficina_local">Oficina Local</option>
-                                    <option value="comercial">Comercial</option>
-                                    <option value="edificio">edificio</option>
-                                    <option value="industria">industria</option>
-                                    <option value="cochera">Cochera</option>
+                                    <option value="condonimio">Condominio</option>
+                                    <option value="oficina">Oficina</option>
+                                    <option value="deificio">Edificio</option>
+                                    <option value="industria">Industria</option>
                                     <option value="bodega">Bodega</option>
-                                    <option value="terreno">terreno</option>
-                                    <option value="quinta">Quinta</option>
                                 </optgroup>
                             </select>
                         </li>
@@ -55,13 +49,63 @@
                                 </optgroup>
                             </select>
                         </li>
+                        <li><label>Tamaño Contruccion</label></li>
+                        <li>
+                            <input type="text" name="tamano-contruccion" id="tamano-contruccion" value="" required> 
+                            <select name="tipe-tamano-contruccion" id="tipe-tamano-contruccion">
+                                <optgroup>
+                                    <option value="metro-cuadrado" selected>m²</option>
+                                    <option value="pie">Pie</option>
+                                </optgroup>
+                            </select>
+                        </li>
+                        <li><label>Edad De la Contruccion</label></li>
+                        <li><input type="text" name="edad-contruccion" id="edad-contruccion" value="" ></li>
                         <li><label>Tamaño del Frente</label></li>
                         <li><input type="text" name="tamano-frente" id="tamano-frente" value="" required></li>
+                        <li><label>Cantidad de Pisos</label></li>
+                        <li>
+                            <select name="cantidad-pisos" id="cantidad-pisos">
+                                <?php
+                                    for ($i=0; $i<=100; $i++)
+                                    {
+                                         if($i === 0){
+                                        ?>
+                                        <option value="<?php echo $i;?>" selected="selected"><?php echo $i;?></option>
+                                        <?php  
+                                        }else{
+                                            ?>
+                                            <option value="<?php echo $i;?>" ><?php echo $i;?></option>
+                                        <?php  
+                                        }
+                                    }
+                                ?>
+                            </select>
+                        </li>
                         <li><label>Cantidad Cuartos</label></li>
                         <li>
                             <select name="cantidad-cuartos" id="cantidad-cuartos">
                                 <?php
                                     for ($i=0; $i<=50; $i++)
+                                    {
+                                         if($i === 0){
+                                        ?>
+                                        <option value="<?php echo $i;?>" selected="selected"><?php echo $i;?></option>
+                                        <?php  
+                                        }else{
+                                            ?>
+                                            <option value="<?php echo $i;?>" ><?php echo $i;?></option>
+                                        <?php  
+                                        }
+                                    }
+                                ?>
+                            </select>
+                        </li>
+                        <li><label>Closet</label></li>
+                        <li>
+                            <select name="closet" id="closet">
+                            <?php
+                                    for ($i=0; $i<=10; $i++)
                                     {
                                          if($i === 0){
                                         ?>
@@ -100,25 +144,6 @@
                                 <option value="jaccussi">Jaccussi</option>
                             </select>
                         </li>
-                        <li><label>Cantidad Cuartos</label></li>
-                        <li>
-                            <select name="cantidad-cuartos" id="cantidad-cuartos">
-                                <?php
-                                    for ($i=0; $i<=50; $i++)
-                                    {
-                                         if($i === 0){
-                                        ?>
-                                        <option value="<?php echo $i;?>" selected="selected"><?php echo $i;?></option>
-                                        <?php  
-                                        }else{
-                                            ?>
-                                            <option value="<?php echo $i;?>" ><?php echo $i;?></option>
-                                        <?php  
-                                        }
-                                    }
-                                ?>
-                            </select>
-                        </li>
                         <li><label>Cochera</label></li>
                         <li><input type="radio" name="cochera"  value="con-cochera">Si <input type="radio" name="cochera" value="sin-cochera">No</li>
                         <li><label>Cantidad de Carros</label></li>
@@ -141,6 +166,39 @@
                                 ?>
                             </select>
                         </li>
+                        <li><label>Cuarto de Lavado</label></li>
+                        <li>
+                            <select name="cuarto-lavado" id="cuarto-lavado" >
+                                <option value="interior" selected>Interior</option>
+                                <option value="exterior">Exterior</option>
+                            </select>
+                        </li>
+
+                        <li><label>Porton Eléctrico</label></li>
+                        <li>
+                            <select name="porton-electrico" id="cuarto-lavado" >
+                                <option value="con-porton" selected>Si</option>
+                                <option value="sin-porton">No</option>
+                            </select>
+                        </li>
+                        <li><label>Aire Acondicionado</label></li>
+                        <li><select name="acondicionado" id="acondicionado" >
+                                <option value="con-aire" selected>Si</option>
+                                <option value="sin-aire">No</option>
+                            </select>
+                        </li>
+                        <li><label>Bodega</label></li>
+                        <li><select name="bodega" id="bodega" >
+                                <option value="exterior-bodega" selected>Exterior</option>
+                                <option value="interior-bodega">Interior</option>
+                            </select>
+                        </li>
+                        <li><label>jardin</label></li>
+                        <li><select name="jardin" id="jardin" >
+                                <option value="con-jardin" selected>Si</option>
+                                <option value="sin-jardin">No</option>
+                            </select>
+                        </li>
                         <li><label>Observaciones</label></li>
                         <li>
                             <textarea rows="5" name="observacion" id="observacion"> </textarea>
@@ -154,5 +212,6 @@
         </div>
     </div>
 </div>
+
 
 <?php include_once('./application/views/footer.php') ;?>

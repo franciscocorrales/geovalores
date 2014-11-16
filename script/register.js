@@ -43,9 +43,10 @@ function registerUser(){
     
     
     if(error == false){
+        var url = $(location).attr('href');  
          $.ajax({
             type:'POST',
-            url:'http://geovalores.techusodev.com/index.php/Register/saveUser',
+            url: '../Register/saveUser',
             data:{
                 txtName:name,
                 txtApellidos:apellidos,
@@ -56,9 +57,9 @@ function registerUser(){
                 txtCorreo:correo
             },
             success:function(data){
-                console.log(data);
-                if(data != null){
+                if(data !== null){
                     confirm("Se registro correctamente!!");
+                    $(".publicar-type").show();
                 }else{
                    confirm("No se registro correctamente!!");
                 }

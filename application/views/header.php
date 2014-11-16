@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title><?php echo $title?></title>
@@ -13,9 +13,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src=<?php echo base_url().'script/googleMaP.js'?> ></script>
-    <script src=<?php echo base_url().'script/login.js'?> ></script>
-	
-
+	<script src=<?php echo base_url().'script/login.js'?> ></script>
+	<script type="text/javascript">
+	$(document).ready(
+	function () {
+	$('#precio1').change(function() {
+		var val = $(this).val();
+            
+       
+    $('#spanvalue').text(val);});
+	}
+	);
+	</script>
 </head>
 <body>
 

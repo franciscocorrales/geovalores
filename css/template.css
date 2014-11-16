@@ -70,7 +70,6 @@
 
 #siteframe {   
     background: #f0f0f0;
-    height: 900px;
 
 }
 
@@ -596,3 +595,45 @@ textarea.form-input {
     margin: 63px auto;
     width: 70%;
 }
+
+.submenu-colunm{
+    display: none;
+}
+
+#publi-detalles {
+    width: 75%;
+}
+#publi-categorias {
+    width: 23%;
+}
+
+.box-publicar {
+    display: inline-flex;
+}
+
+#content{
+    background-color: #fff;
+    border: 1px solid #C9C4C3;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 6px 10px -2px rgba(46,45,46,1);
+    -moz-box-shadow: 0px 6px 10px -2px rgba(46,45,46,1);
+    box-shadow: 0px 6px 10px -2px rgba(46,45,46,1);
+}
+.content-padding{
+    padding: 30px 10px;
+}
+
+#btn-save-info {
+    bottom: 1%;
+    position: absolute;
+    right: 3%;
+}
+
+.info-venta{
+    width: 100%;
+}
+
+ul li input, select, textarea {
+    width: 45%;
+}
+

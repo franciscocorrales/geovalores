@@ -220,7 +220,7 @@
                 public function InsertTable($tabla,$data) {
                     try {
                         $this->db->insert($tabla, $data); 
-                        return 'successful';
+                        return $this->db->insert_id();;
                     } catch (Exception $exc) {
                         return 'error';
                     }

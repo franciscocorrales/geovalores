@@ -32,7 +32,7 @@ class Register extends CI_Controller {
                  );
                 
                  $result = $this->DBModel->InsertTable('usuarios',$data);
-                 if($result == 'successful'){
+                 if($result !== 'error'){
                      echo true;
                  }else{
                      echo false;
