@@ -118,7 +118,14 @@
 	</div>
 </div>
 	<!-- end content -->	
-
+<?php 
+if($this->session->flashdata('usuario_incorrecto'))
+{
+?>
+        <script> alert('<?=$this->session->flashdata('usuario_incorrecto')?>');</script>
+<?php
+}
+?>
 
 <?php include ("footer.php") ;?>
 

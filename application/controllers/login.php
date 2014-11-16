@@ -34,11 +34,11 @@ class Login extends CI_Controller
         if ($login)
         {
              redirect(base_url().'index.php/Login/adminuser');
-        }
+        
 	}
         }
-
-	public function logout_ci()
+        }
+	public function logout()
 	{
 		$this->session->sess_destroy();
 		$this->index();
