@@ -61,14 +61,14 @@ class Inicio extends CI_Controller {
 		//carfamos la base de datos, los helpers
 		//librerías y el modelo en el constructor
 		$this->load->database('default');
+		 $this->load->library(array('session','form_validation'));
 		$this->load->helper(array('form','url','date','html'));
 		$this->load->model('InicioModel');
 		
 	}
 	public function index()
 	{
-		$this->load->helper(array('form','url','date','html'));
-		$this->load->helper('date');
+               
 		$title["title"] = "GeoValores";
 		$this->load->view('Inicio', $title);
 	}

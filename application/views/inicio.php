@@ -12,7 +12,7 @@
                                     <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Quienes Somos</span></a></li>
                                     <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Comprar</span></a></li>
                                     <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Venta</span></a></li>
-                                    <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Contacto</span></a></li>
+                                    <li class="mainmenu-itemvertical"><a href="index.php/Contacto"><?php echo img('images/flechamenu.png');?> <span>Contacto</span></a></li>
                                 </ul>
                             </div>
 
