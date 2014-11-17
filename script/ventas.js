@@ -1,4 +1,17 @@
+ $(document).ready(function() {
+    
+$('#precio-dolar').change(function(){
+  var precio = 532; 
+  var resultado = $('#precio-dolar').val() * precio;
+  $('#precio-colones').val(resultado);
+});
 
+$('#precio-colones').change(function(){
+  var precio = 532;
+  var resultado = $('#precio-colones').val() / precio;
+  $('#precio-dolar').val(resultado);
+});
+});
 
 function SaveInfo()
 {

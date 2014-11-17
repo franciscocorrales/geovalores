@@ -1,10 +1,10 @@
-<?php include_once('./application/views/header.php') ;?>
+<?php include '/../headeradmin.php';?>
 <script src=<?php echo base_url().'script/ventas.js'?> ></script>
 
 <div id="siteframe">
     <div id="content">
         <div class="content-padding">
-            <?php include_once('./application/views/columnMenu.php') ;?>
+            <?php include '/../columnMenu.php' ;?>
             <div class="box-publicar" id="publi-detalles">
                 <form name="info-venta" class="info-venta">
                     <ul>
@@ -80,4 +80,4 @@
     </div>
 </div>
 
-<?php include_once('./application/views/footer.php') ;?>
+<?php include '/../footer.php' ;?>

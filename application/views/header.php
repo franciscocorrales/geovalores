@@ -8,7 +8,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title><?php echo $title?></title>
     <?php echo link_tag("css/reset.css");  ?>
     <?php echo link_tag("css/global.css");  ?>
-    <?php echo link_tag("css/bootstrap.css");  ?>
     <?php echo link_tag("css/template.css");  ?>
     <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>

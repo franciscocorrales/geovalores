@@ -1,4 +1,4 @@
-<?php include_once('./application/views/header.php') ;?>
+<?php include_once('/../headeradmin.php') ;?>
 
 
 <div id="siteframe">
@@ -21,5 +21,5 @@
 </div>
 
 
-<?php include_once('./application/views/footer.php') ;?>
+<?php include_once('/../footer.php') ;?>
 

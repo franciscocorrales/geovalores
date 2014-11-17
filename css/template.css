@@ -16,10 +16,10 @@
     color: #002600;
     float: right;
     font-weight: bold;
-    height: 60px;
-    line-height: 60px !important;
-    margin-right: 40px;
-    margin-top: 15px;
+    height: 42px;
+    line-height: 42px !important;
+    margin-right: -220px;
+    margin-top: 35px;
     padding-left: 10px;
     position: relative;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
@@ -28,9 +28,9 @@
 }
 
 .publicar:after {
-    border-bottom: 30px solid transparent;
+    border-bottom: 20px solid transparent;
     border-left: 40px solid #439a00;
-    border-top: 30px solid transparent;
+    border-top: 23px solid transparent;
     content: "";
     position: absolute;
     right: -40px;
@@ -70,6 +70,7 @@
 
 #siteframe {   
     background: #f0f0f0;
+    height: 900px;
 
 }
 
@@ -284,7 +285,7 @@ input.grandes{
     margin-right: 20px;
 }
 
-#cmenu .pequeñas {
+#cmenu .pequeÃ±as {
     float: left;
 }
 
@@ -379,7 +380,7 @@ button.save-marker, button.remove-marker{border: none;background: rgba(0, 0, 0, 
 }
 
 
-input.errorClas{
+.errorClas{
     border-color: #00F;
 }
 
@@ -588,55 +589,4 @@ textarea.form-input {
   position: relative;
   top: 2px;
   right: 2px;
-  }
-  
-.content-Register {
-    margin: 63px auto;
-    width: 70%;
-}
-
-.submenu-colunm{
-    display: none;
-}
-
-#publi-detalles {
-    width: 75%;
-}
-#publi-categorias {
-    width: 23%;
-}
-
-.box-publicar {
-    display: inline-flex;
-}
-
-#content{
-    background-color: #fff;
-    border: 1px solid #C9C4C3;
-    border-radius: 5px;
-    -webkit-box-shadow: 0px 6px 10px -2px rgba(46,45,46,1);
-    -moz-box-shadow: 0px 6px 10px -2px rgba(46,45,46,1);
-    box-shadow: 0px 6px 10px -2px rgba(46,45,46,1);
-}
-.content-padding{
-    padding: 30px 10px;
-}
-
-#btn-save-info {
-    bottom: 1%;
-    position: absolute;
-    right: 3%;
-}
-
-.info-venta{
-    width: 100%;
-}
-
-ul li input, select, textarea {
-    width: 45%;
-}
-
-ul, ol {
-    margin: 0 0 10px;
-    padding: 0;
 }

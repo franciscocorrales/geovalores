@@ -6,37 +6,37 @@ class Publicar extends CI_Controller {
     
 	public function __construct(){
 		parent::__construct();
-               
+               $this->load->helper(array('form','url','date','html'));
 	}
         
         public function publicar()
 	{
-		$this->load->helper('html');
+		$this->load->helper(array('form','url','date','html'));
 		$title["title"] = "GeoValores";
 		$this->load->view('ventas/ventas', $title);
 	}
         
         public function contrucciones()
         {
-            $this->load->helper('html');
+            $this->load->helper(array('form','url','date','html'));
             $title["title"] = "GeoValores";
             $this->load->view('ventas/contrucciones', $title);
         }
         
         public function terrenos() {
-            $this->load->helper('html');
+            $this->load->helper(array('form','url','date','html'));
             $title["title"] = "GeoValores";
             $this->load->view('ventas/terrenos', $title);
         }
         
         public function alquileres() {
-            $this->load->helper('html');
+            $this->load->helper(array('form','url','date','html'));
             $title["title"] = "GeoValores";
             $this->load->view('ventas/alquileres', $title);
         }
         
         public function remates() {
-            $this->load->helper('html');
+            $this->load->helper(array('form','url','date','html'));
             $title["title"] = "GeoValores";
             $this->load->view('ventas/remates', $title);
         }
