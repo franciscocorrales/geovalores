@@ -9,6 +9,7 @@
 <div id="siteframe">
     <div id="content">
         <div class="content-padding">
+            <div class="title-page"><h1><?php echo $title_page ?></h1></div>
             <?php include_once('/../columnMenu.php') ;?>
             <div class="box-publicar" id="publi-detalles">
                 <form name="info-venta" class="info-venta">
@@ -42,6 +43,12 @@
                                     <option value="quinta">Quinta</option>
                                 </optgroup>
                             </select>
+                        </li>
+                        <li><label>Direccion</label></li>
+                        <li>
+                            <div class="local-map">
+                                <div id="google_map"></div>
+                            </div>
                         </li>
                         <li><label>Precio Dolares</label></li>
                         <li><input type="text" name="precio-dolar" id="precio-dolar" value="" required></li>

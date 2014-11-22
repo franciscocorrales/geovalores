@@ -70,7 +70,7 @@
 
 #siteframe {   
     background: #f0f0f0;
-    height: 900px;
+    min-height: 900px;
 
 }
 
@@ -589,4 +589,15 @@ textarea.form-input {
   position: relative;
   top: 2px;
   right: 2px;
+}
+
+
+.title-page {
+    height: 70px;
+    width: 100%;
+}
+    
+    
+.title-page h1 {
+    text-align: center;
 }

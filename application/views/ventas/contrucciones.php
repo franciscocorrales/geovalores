@@ -1,13 +1,9 @@
 <?php include_once('/../headeradmin.php') ;?>
-<style>
-    #siteframe {
-    height: 1665px;
-}
-</style>
 <script src=<?php echo base_url().'script/ventas.js'?> ></script>
 <div id="siteframe">
     <div id="content">
         <div class="content-padding">
+            <div class="title-page"><h1><?php echo $title_page ?></h1></div>
             <?php include_once('/../columnMenu.php') ;?>
             <div class="box-publicar" id="publi-detalles">
                 <form name="info-venta" class="info-venta">
@@ -43,7 +39,11 @@
                         <li><label>Precio Colores</label></li>
                         <li><input type="text" name="precio-colones" id="precio-colones" value="" ></li>
                         <li><label>Direccion</label></li>
-                        <li><input type="text" name="dirrecion" id="dirrecion" value="" required></li>
+                        <li>
+                            <div class="local-map">
+                                <div id="google_map"></div>
+                            </div>
+                        </li>
                         <li><label>Tamaño del Terreno</label></li>
                         <li>
                             <input type="text" name="tamano-terreno" id="tamano-terreno" value="" required> 
@@ -198,7 +198,7 @@
                                 <option value="interior-bodega">Interior</option>
                             </select>
                         </li>
-                        <li><label>jardin</label></li>
+                        <li><label>Jardin</label></li>
                         <li><select name="jardin" id="jardin" >
                                 <option value="con-jardin" selected>Si</option>
                                 <option value="sin-jardin">No</option>

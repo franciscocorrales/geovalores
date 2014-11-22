@@ -1,4 +1,4 @@
-<?php include_once('./application/views/header_1.php') ;?>
+<?php include_once('./application/views/headeradmin.php') ;?>
 <script src=<?php echo base_url().'script/register.js'?> ></script>
 <div id="siteframe">
 	<div id="content">
@@ -31,7 +31,7 @@
                                 <input type="radio" name="btn-notificacion" value="0" >No
                             </li>
                             <li><input type="button" value="Registrarse" id="btn-save" onclick="registerUser();"</li>
-                            <li><a class="publicar-type" href="<?php echo base_url(); ?>index.php/Publicar/publicar" style="display: none">Siguiente</a></li>
+                            <li><a class="publicar-type" href="<?php echo base_url(); ?>index.php/Publicar/contrucciones" style="display: none">Siguiente</a></li>
                         </ul>
                         </div>
                     </div>

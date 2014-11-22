@@ -9,36 +9,33 @@ class Publicar extends CI_Controller {
                $this->load->helper(array('form','url','date','html'));
 	}
         
-        public function publicar()
-	{
-		$this->load->helper(array('form','url','date','html'));
-		$title["title"] = "GeoValores";
-		$this->load->view('ventas/ventas', $title);
-	}
-        
         public function contrucciones()
         {
             $this->load->helper(array('form','url','date','html'));
-            $title["title"] = "GeoValores";
-            $this->load->view('ventas/contrucciones', $title);
+            $data["title"] = "GeoValores";
+            $data["title_page"] = "Publicar Contrucciones";
+            $this->load->view('ventas/contrucciones', $data);
         }
         
         public function terrenos() {
             $this->load->helper(array('form','url','date','html'));
-            $title["title"] = "GeoValores";
-            $this->load->view('ventas/terrenos', $title);
+            $data["title"] = "GeoValores";
+            $data["title_page"] = "Publicar Terrenos";
+            $this->load->view('ventas/terrenos', $data);
         }
         
         public function alquileres() {
             $this->load->helper(array('form','url','date','html'));
-            $title["title"] = "GeoValores";
-            $this->load->view('ventas/alquileres', $title);
+            $data["title"] = "GeoValores";
+            $data["title_page"] = "Publicar Alquileres";
+            $this->load->view('ventas/alquileres', $data);
         }
         
         public function remates() {
             $this->load->helper(array('form','url','date','html'));
-            $title["title"] = "GeoValores";
-            $this->load->view('ventas/remates', $title);
+            $data["title"] = "GeoValores";
+            $data["title_page"] = "Publicar Remates";
+            $this->load->view('ventas/remates', $data);
         }
         
         public function saveInfo() {

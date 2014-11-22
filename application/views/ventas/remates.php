@@ -5,6 +5,7 @@
 <div id="siteframe">
     <div id="content">
         <div class="content-padding">
+            <div class="title-page"><h1><?php echo $title_page ?></h1></div>
             <?php include_once('/../columnMenu.php') ;?>
             <div class="box-publicar" id="publi-detalles">
                 <form name="info-venta" class="info-venta">
@@ -36,7 +37,11 @@
                         <li><label>Precio Remate</label></li>
                         <li><input type="text" name="precio-remate" id="precio-remate" value="" required></li>
                         <li><label>Dirección de la Propiedad</label></li>
-                        <li><input type="text" name="dirrecion" id="dirrecion" value="" required></li>
+                        <li>
+                            <div class="local-map">
+                                <div id="google_map"></div>
+                            </div>
+                        </li>
                         <li><label>Tamaño Propiedad</label></li>
                         <li>
                             <input type="text" name="tamano-propiedad" id="tamano-propiedad" value="" required> 
