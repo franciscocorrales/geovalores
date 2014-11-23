@@ -1,9 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-if ($this->session->userdata('usuario') == FALSE)
-{
-     redirect('/Login/adminuser', 'refresh');
-}
+
 ?>
 
 <!DOCTYPE html>
