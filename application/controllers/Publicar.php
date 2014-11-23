@@ -8,7 +8,12 @@ class Publicar extends CI_Controller {
 		parent::__construct();
                $this->load->helper(array('form','url','date','html'));
 	}
-        
+        public function publicar()
+	{
+		$this->load->helper(array('form','url','date','html'));
+		$title["title"] = "GeoValores";
+		$this->load->view('ventas/ventas', $title);
+	}
         public function contrucciones()
         {
             $this->load->helper(array('form','url','date','html'));

@@ -1,8 +1,14 @@
 <?php include ("header.php") ;?>
 <style>
-    #siteframe {
+   #content {
+    background-color: #fff;
+    border: 1px solid #c9c4c3;
+    border-radius: 5px;
+    box-shadow: 0 6px 10px -2px rgba(46, 45, 46, 1);
+}
+#siteframe {
     background: none repeat scroll 0 0 #f0f0f0;
-    height: 410px;
+    min-height: 415px;
 }
 
 label {

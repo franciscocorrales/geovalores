@@ -36,11 +36,15 @@
                         <li><input type="text" name="numero-expediente" id="numero-expediente" value="" required></li>
                         <li><label>Precio Remate</label></li>
                         <li><input type="text" name="precio-remate" id="precio-remate" value="" class="numbersOnly"></li>
-                        <li><label>Dirección de la Propiedad</label></li>
+                        <li><label>Dirección (Arrastrar el marcador para actualizar la posición)</label></li>
                         <li>
                             <div class="local-map">
                                 <div id="google_map"></div>
                             </div>
+                        </li>
+                        <li>
+                            <input type="text" name="lat" id="lat" value="" class="numbersOnly"/>
+                            <input type="text" name="lng" id="lng" value="" class="numbersOnly"/>
                         </li>
                         <li><label>Tamaño Propiedad</label></li>
                         <li>

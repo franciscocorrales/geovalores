@@ -44,11 +44,16 @@
                                 </optgroup>
                             </select>
                         </li>
-                        <li><label>Direccion</label></li>
+                        <li><label>Direccion (Arrastrar el marcador para actualizar la posiciónArrastrar el marcador para actualizar la posición)</label></li>
                         <li>
                             <div class="local-map">
                                 <div id="google_map"></div>
-                            </div>
+                            </div
+                          
+                        </li>
+                        <li>
+                            <input type="text" name="lat" id="lat" value="" class="numbersOnly"/>
+                            <input type="text" name="lng" id="lng" value="" class="numbersOnly"/>
                         </li>
                         <li><label>Precio Dolares</label></li>
                         <li><input type="text" name="precio-dolar" id="precio-dolar" value="" class="numbersOnly"></li>

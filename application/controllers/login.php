@@ -47,7 +47,7 @@ class Login extends CI_Controller
         public function adminuser()
 	{
 		
-		$data['titulo'] = 'Bienvenido Administrador';
-		$this->load->view('admin',$data);
+		$title['title'] = 'Bienvenido Administrador';
+		$this->load->view('admin',$title);
 	}
 }

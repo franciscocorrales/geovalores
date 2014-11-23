@@ -12,15 +12,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src=<?php echo base_url().'script/googleMaP.js'?> ></script>
-	<script src=<?php echo base_url().'script/login.js'?> ></script>
-	<script type="text/javascript">
+    <script src=<?php echo base_url().'script/login.js'?> ></script>
+    <script type="text/javascript">
 	$(document).ready(
 	function () {
 	$('#precio1').change(function() {
 		var val = $(this).val();
             
        
-    $('#spanvalue').text(val);});
+        $('#spanvalue').text(val);});
 	}
 	);
 	</script>
@@ -38,8 +38,8 @@ $logo = array(
 );
 
 
-$username = array('name' => 'username', 'placeholder' => 'nombre de usuario');
-$password = array('name' => 'password',	'placeholder' => 'introduce tu password');
+$username = array('name' => 'username', 'placeholder' => 'Nombre de usuario');
+$password = array('name' => 'password',	'placeholder' => 'Introduce tu password');
 $submit = array('name' => 'submit', 'id' => 'loginboton', 'value' => 'Iniciar sesión', 'title' => 'Iniciar sesión');
 $form = array('id' => 'loginform');
 ?>
@@ -71,17 +71,17 @@ $form = array('id' => 'loginform');
                     </ul>
                   </nav>
 		<div id="header-logo">
-			<a href="/"><?php echo img($logo);?></a>
+			<a href="<?php echo base_url(); ?>index.php"><?php echo img($logo);?></a>
                 </div>
 		<!-- main nav -->
 		<div id="mainnavigation">
 			<div id="nav-gutter">
 				<ul id="nav" class="mainmenu">
-					<li class="mainmenu-item mainmenu-item-5346 active first"><a href="/"><span>Inicio</span></a></li>
-					<li class="mainmenu-item mainmenu-item-5380  "><a href="/"><span>Quienes Somos</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5346 active first"><a href="<?php echo base_url(); ?>index.php"><span>Inicio</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5380  "><a href="<?php echo base_url(); ?>index.php/Quienessomos/quienessomos"><span>Quienes Somos</span></a></li>
 					<li class="mainmenu-item mainmenu-item-5381  "><a href="/"><span>Comprar</span></a></li>
 					<li class="mainmenu-item mainmenu-item-5441  "><a href="/"><span>Venta</span></a></li>
-					<li class="mainmenu-item mainmenu-item-5382  last"><a href="/"><span>Contacto</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5382  last"><a href="<?php echo base_url(); ?>index.php/Contacto"><span>Contacto</span></a></li>
 				</ul>
 				<div style="clear: left"></div>
 			</div>
