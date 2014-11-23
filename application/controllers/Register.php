@@ -6,7 +6,7 @@ class Register extends CI_Controller {
     
 	public function __construct(){
 		parent::__construct();
-               
+		$this->load->library(array('session','form_validation'));
 	}
 
 
@@ -26,7 +26,7 @@ class Register extends CI_Controller {
                     'apellidos' => $_POST['txtApellidos'] ,
                     'telefono' => $_POST['txtTelefono'],
                     'direccion' => $_POST['txtDireccion'],
-                    'pass' => base64_encode($_POST['txtPass']),
+                    'pass' => sha1($_POST['txtPass']),
                     'correo' =>  $_POST['txtCorreo'],
                     'notificaciones' => $_POST['txtNotificacion']
                  );

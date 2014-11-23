@@ -30,7 +30,7 @@
                                 <input type="radio" name="btn-notificacion" value="1" checked>Si
                                 <input type="radio" name="btn-notificacion" value="0" >No
                             </li>
-                            <li><input type="button" value="Registrarse" id="btn-save" onclick="registerUser();"</li>
+                            <li><input type="button" value="Registrarse" id="btn-save" onclick="registerUser();"></li>
                             <li><a class="publicar-type" href="<?php echo base_url(); ?>index.php/Publicar/contrucciones" style="display: none">Siguiente</a></li>
                         </ul>
                         </div>

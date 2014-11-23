@@ -46,23 +46,22 @@ class Publicar extends CI_Controller {
             $c=0;
             foreach ( $data as $dat)
             {
-                if($dat[$c]['name'] == "categoria" || $dat[$c]['name'] == "tiempo")
+                if($dat['name'] == "tipo_categoria" || $dat['name'] == "tiempo")
                 {
-                        $array_publicacion[$dat[$c]['name']] =  $dat[$c]['value'];
+                        $array_publicacion[$dat['name']] =  $dat['value'];
                 }
                 else
                 {
-                       $array_data[$dat[$c]['name']] = $dat[$c]['value'];
+                       $array_data[$dat['name']] = $dat['value'];
                 }
                 $c++;
             }
-            echo $array_publicacion;
-          $id_publicacion = $this->DBModel->InsertTable('publicaciones',$array_publicacion);
-
+            $array_publicacion['usuarios_idUsuario'] =  12;
+          	$id_publicacion = $this->DBModel->InsertTable('publicaciones',$array_publicacion);
+          	$msj = '';
              if($id_publicacion !== 'error'){
                  foreach ($array_data as $key => $value) {
-                     $data = array(
-                        'idField'  => '',   
+                     $data = array(  
                         'field_value' => $value ,
                         'field_name' => $key,
                         'idPublicacion' => $id_publicacion
@@ -70,13 +69,18 @@ class Publicar extends CI_Controller {
                  try {
                      $this->DBModel->InsertTable('details_fields',$data);                    
                  } catch (Exception $exc) {
-                     echo false;
+                     $msj = false;
                  }
-                 echo true;
+                 $msj = true;
                  }
             }else{
                 echo false;
             }
             
+            if($msj == true){
+            	echo true;
+            }else{
+            	echo false;
+            }
         }
 }

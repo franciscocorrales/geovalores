@@ -35,7 +35,7 @@
                         <li><label>Número Expediente</label></li>
                         <li><input type="text" name="numero-expediente" id="numero-expediente" value="" required></li>
                         <li><label>Precio Remate</label></li>
-                        <li><input type="text" name="precio-remate" id="precio-remate" value="" required></li>
+                        <li><input type="text" name="precio-remate" id="precio-remate" value="" class="numbersOnly"></li>
                         <li><label>Dirección de la Propiedad</label></li>
                         <li>
                             <div class="local-map">
@@ -44,7 +44,7 @@
                         </li>
                         <li><label>Tamaño Propiedad</label></li>
                         <li>
-                            <input type="text" name="tamano-propiedad" id="tamano-propiedad" value="" required> 
+                            <input type="text" name="tamano-propiedad" id="tamano-propiedad" value="" class="numbersOnly"> 
                             <select name="tipe-tamano-terreno" id="tipe-tamano-terreno">
                                 <optgroup>
                                     <option value="metro-cuadrado" selected>m²</option>

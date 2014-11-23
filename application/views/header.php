@@ -66,7 +66,7 @@ $form = array('id' => 'loginform');
                         </div>                     
                       </li>
                       <li id="signup">
-                        <a href="">Registacion</a>
+                        <a href="<?php echo base_url(); ?>index.php/Register/register">Registacion</a>
                       </li>
                     </ul>
                   </nav>

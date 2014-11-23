@@ -51,14 +51,14 @@
                             </div>
                         </li>
                         <li><label>Precio Dolares</label></li>
-                        <li><input type="text" name="precio-dolar" id="precio-dolar" value="" required></li>
+                        <li><input type="text" name="precio-dolar" id="precio-dolar" value="" class="numbersOnly"></li>
                         <li><label>Precio Colores</label></li>
-                        <li><input type="text" name="precio-colones" id="precio-colones" value="" ></li>
+                        <li><input type="text" name="precio-colones" id="precio-colones" value="" class="numbersOnly" ></li>
                         <li><label>Direccion</label></li>
                         <li><input type="text" name="dirrecion" id="dirrecion" value="" required></li>
                         <li><label>Tamaño del Terreno</label></li>
                         <li>
-                            <input type="text" name="tamano-terreno" id="tamano-terreno" value="" required> 
+                            <input type="text" name="tamano-terreno" id="tamano-terreno" value="" class="numbersOnly"> 
                             <select name="tipe-tamano-terreno" id="tipe-tamano-terreno">
                                 <optgroup>
                                     <option value="metro-cuadrado" selected>m²</option>
@@ -67,7 +67,7 @@
                             </select>
                         </li>
                         <li><label>Tamaño del Frente</label></li>
-                        <li><input type="text" name="tamano-frente" id="tamano-frente" value="" required></li>
+                        <li><input type="text" name="tamano-frente" id="tamano-frente" value="" class="numbersOnly"></li>
                         <li><label>Cantidad Cuartos</label></li>
                         <li>
                             <select name="cantidad-cuartos" id="cantidad-cuartos">
@@ -132,8 +132,8 @@
                         </li>
                         <li><label>Cochera</label></li>
                         <li><input type="radio" name="cochera"  value="con-cochera">Si <input type="radio" name="cochera" value="sin-cochera">No</li>
-                        <li><label>Cantidad de Carros</label></li>
-                        <li>
+                        <li class="cant-carros" style="display: none;"><label>Cantidad de Carros</label></li>
+                        <li class="cant-carros" style="display: none;">
                             <select name="cantidad-carros" id="cantidad-carros">
                                 <?php
                                     for ($i=0; $i<=10; $i++)

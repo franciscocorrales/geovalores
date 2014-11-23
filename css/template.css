@@ -380,7 +380,7 @@ button.save-marker, button.remove-marker{border: none;background: rgba(0, 0, 0, 
 }
 
 
-.errorClas{
+input.errorClas{
     border-color: #00F;
 }
 
@@ -600,4 +600,14 @@ textarea.form-input {
     
 .title-page h1 {
     text-align: center;
+}
+
+.info-venta > ul > li {
+    padding-bottom: 10px;
+}
+
+.info-venta > ul > li > label {
+    color: rgb(0, 0, 0);
+    font-family: Georgia;
+    font-size: 17px;
 }

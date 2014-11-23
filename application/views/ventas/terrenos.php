@@ -36,9 +36,9 @@
                             </select>
                         </li>
                         <li><label>Precio Dolares</label></li>
-                        <li><input type="text" name="precio-dolar" id="precio-dolar" value="" required></li>
+                        <li><input type="text" name="precio-dolar" id="precio-dolar" value="" class="numbersOnly"></li>
                         <li><label>Precio Colores</label></li>
-                        <li><input type="text" name="precio-colones" id="precio-colones" value="" ></li>
+                        <li><input type="text" name="precio-colones" id="precio-colones" value="" class="numbersOnly" ></li>
                         <li><label>Direccion</label></li>
                         <li>
                             <div class="local-map">
@@ -47,7 +47,7 @@
                         </li>
                         <li><label>Tamaño del Terreno</label></li>
                         <li>
-                            <input type="text" name="tamano-terreno" id="tamano-terreno" value="" required> 
+                            <input type="text" name="tamano-terreno" id="tamano-terreno" value="" class="numbersOnly"> 
                             <select name="tipe-tamano-terreno" id="tipe-tamano-terreno">
                                 <optgroup>
                                     <option value="metro-cuadrado" selected>m²</option>
@@ -56,7 +56,7 @@
                             </select>
                         </li>
                         <li><label>Tamaño del Frente</label></li>
-                        <li><input type="text" name="tamano-frente" id="tamano-frente" value="" required></li>
+                        <li><input type="text" name="tamano-frente" id="tamano-frente" value="" class="numbersOnly"></li>
                         <li><label>Topografia</label></li>
                         <li> 
                             <select name="topografia" id="topografia">
