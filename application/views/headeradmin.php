@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+if ($this->session->userdata('usuario') == FALSE)
+{
+     redirect('/Login/adminuser', 'refresh');
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -100,6 +105,8 @@ $logo = array(
             <!-- main nav -->
 		<div id="mainnavigation">
 			<div id="nav-gutter">
+                            <?php 
+                            if($this->session->userdata('usuario')== TRUE){ ?>
 				<ul id="nav" class="mainmenu">
 					<li class="mainmenu-item mainmenu-item-5346 active first"><a href="<?php echo base_url(); ?>index.php/Login/adminuser"><span>Inicio</span></a></li>
 					
@@ -107,6 +114,7 @@ $logo = array(
 					<li class="mainmenu-item mainmenu-item-5441  "><a href="<?php echo base_url(); ?>index.php/Publicar/publicar"><span>Publicar</span></a></li>
 					
 				</ul>
+                            <?php } ?>
 				<div style="clear: left"></div>
 			</div>
 		</div>
