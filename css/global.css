@@ -21,7 +21,7 @@ html { overflow-y: scroll; }
 
 /* header */
 #quick-link-container { position: absolute; top: 10px; right: 10px; }
-#header-logo { position: absolute; width: 28%; top: 13px; left: 0px; }
+#header-logo { position: absolute; width: 28%; top: 13px; left: 0px;background: none repeat scroll 0 0 rgba(54, 25, 25, 0.5); }
 
 /* content */
 #siteframe { text-align: center; background-color: #FFF; }

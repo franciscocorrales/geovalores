@@ -9,9 +9,10 @@
                             <div class="nav-content-left">
                                 <ul>
                                     <li class="mainmenu-itemvertical active"><a href="<?php echo base_url(); ?>index.php"><?php echo img('images/flechamenu.png');?> <span>Inicio</span></a></li>
-                                    <li class="mainmenu-itemvertical"><a href="<?php echo base_url(); ?>index.php/Quienessomos/quienessomos"><?php echo img('images/flechamenu.png');?> <span>Quienes Somos</span></a></li>
-                                    <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Comprar</span></a></li>
-                                    <li class="mainmenu-itemvertical"><a href="/"><?php echo img('images/flechamenu.png');?> <span>Venta</span></a></li>
+                                    <li class="mainmenu-itemvertical"><a href="<?php echo base_url(); ?>index.php/Publicar/contrucciones"><?php echo img('images/flechamenu.png');?> <span>Contrucciones</span></a></li>
+                                    <li class="mainmenu-itemvertical"><a href="<?php echo base_url(); ?>index.php/Publicar/terrenos"><?php echo img('images/flechamenu.png');?> <span>Terrenos</span></a></li>
+                                    <li class="mainmenu-itemvertical"><a href="<?php echo base_url(); ?>index.php/Publicar/alquileres"><?php echo img('images/flechamenu.png');?> <span>Alquileres</span></a></li>
+                                    <li class="mainmenu-itemvertical"><a href="<?php echo base_url(); ?>index.php/Publicar/remates"><?php echo img('images/flechamenu.png');?> <span>Remates</span></a></li>
                                     <li class="mainmenu-itemvertical"><a href="<?php echo base_url(); ?>index.php/Contacto"><?php echo img('images/flechamenu.png');?> <span>Contacto</span></a></li>
                                 </ul>
                             </div>

@@ -16,7 +16,7 @@
                     <ul>
                         <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="alquileres" ></li>
                         <li><label>Titulo</label></li>
-                        <li><input type="text" name="titulo" id="titulo" value="" required></li>
+                        <li><input type="text" name="name" id="name" value="" required></li>
                          <li><label>Tiempo de la Publicacion</label></li>
                         <li>
                             <select name="tiempo" id="tiempo">
@@ -30,17 +30,17 @@
                         <li>
                             <select name="tipo-Terreno" id="tipo-Terreno">
                                 <optgroup>
-                                    <option value="casa">Casa</option>
-                                    <option value="apartamento">Apartamento</option>
-                                    <option value="condominio">Condominio</option>
-                                    <option value="oficina_local">Oficina Local</option>
-                                    <option value="comercial">Comercial</option>
-                                    <option value="edificio">edificio</option>
-                                    <option value="industria">industria</option>
-                                    <option value="cochera">Cochera</option>
-                                    <option value="bodega">Bodega</option>
-                                    <option value="terreno">terreno</option>
-                                    <option value="quinta">Quinta</option>
+                                    <option value="Casa">Casa</option>
+                                    <option value="Apartamento">Apartamento</option>
+                                    <option value="Condominio">Condominio</option>
+                                    <option value="Oficina_local">Oficina Local</option>
+                                    <option value="Comercial">Comercial</option>
+                                    <option value="Edificio">edificio</option>
+                                    <option value="Industria">industria</option>
+                                    <option value="Cochera">Cochera</option>
+                                    <option value="Bodega">Bodega</option>
+                                    <option value="Terreno">terreno</option>
+                                    <option value="Quinta">Quinta</option>
                                 </optgroup>
                             </select>
                         </li>
@@ -60,7 +60,15 @@
                         <li><label>Precio Colores</label></li>
                         <li><input type="text" name="precio-colones" id="precio-colones" value="" class="numbersOnly" ></li>
                         <li><label>Direccion</label></li>
-                        <li><input type="text" name="dirrecion" id="dirrecion" value="" required></li>
+                        <li><select name="address" id="address" value="" required style="">
+                            <option value="San Jose">San José</option>
+                            <option value="Alajuela">Alajuela</option>
+                            <option value="Cartago">Cartago</option>
+                            <option value="Guanacaste">Guanacaste</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="Puntarenas">Puntarenas</option>
+                            <option value="Limon">Limón</option>
+                        </select></li>
                         <li><label>Tamaño del Terreno</label></li>
                         <li>
                             <input type="text" name="tamano-terreno" id="tamano-terreno" value="" class="numbersOnly"> 

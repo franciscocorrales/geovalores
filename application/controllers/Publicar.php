@@ -12,50 +12,57 @@ class Publicar extends CI_Controller {
        
         public function contrucciones()
         {
-        	$idUsuario =  $this->session->userdata('usuario');
-        	if(!empty($idUsuario)){
-	            $this->load->helper(array('form','url','date','html'));
-	            $data["title"] = "GeoValores";
-	            $data["title_page"] = "Publicar Contrucciones";
-	            $this->load->view('ventas/contrucciones', $data);
-        	}
+		$this->load->helper(array('form','url','date','html'));
+		$title["title"] = "GeoValores";
+		$this->load->view('ventas/ventas', $title);
+	}
+        public function contrucciones()
+        {
+            if(empty($this->session->userdata('usuario_name'))){
+                 
+                redirect(base_url().'index.php/Login/adminuser');
+            }
+            
+            $this->load->helper(array('form','url','date','html'));
+            $data["title"] = "GeoValores";
+            $data["title_page"] = "Publicar Contrucciones";
+            $this->load->view('ventas/contrucciones', $data);
         }
         
         public function terrenos() {
-        	$idUsuario =  $this->session->userdata('usuario');
-        	if(!empty($idUsuario)){
-        		$this->load->helper(array('form','url','date','html'));
-	            $data["title"] = "GeoValores";
-	            $data["title_page"] = "Publicar Terrenos";
-	            $this->load->view('ventas/terrenos', $data);
-        	}
-            
+            if(empty($this->session->userdata('usuario_name'))){
+                 
+                redirect(base_url().'index.php/Login/adminuser');
+            }
+            $this->load->helper(array('form','url','date','html'));
+            $data["title"] = "GeoValores";
+            $data["title_page"] = "Publicar Terrenos";
+            $this->load->view('ventas/terrenos', $data);
         }
         
         public function alquileres() {
-        	$idUsuario =  $this->session->userdata('usuario');
-        	if(!empty($idUsuario)){
-        		$this->load->helper(array('form','url','date','html'));
-	            $data["title"] = "GeoValores";
-	            $data["title_page"] = "Publicar Alquileres";
-	            $this->load->view('ventas/alquileres', $data);
-	        	}
-            
+            if(empty($this->session->userdata('usuario_name'))){
+                 
+                redirect(base_url().'index.php/Login/adminuser');
+            }
+            $this->load->helper(array('form','url','date','html'));
+            $data["title"] = "GeoValores";
+            $data["title_page"] = "Publicar Alquileres";
+            $this->load->view('ventas/alquileres', $data);
         }
         
         public function remates() {
-        	$idUsuario =  $this->session->userdata('usuario');
-        	if(!empty($idUsuario)){
-        		$this->load->helper(array('form','url','date','html'));
-	            $data["title"] = "GeoValores";
-	            $data["title_page"] = "Publicar Remates";
-	            $this->load->view('ventas/remates', $data);
-        	}
-            
+            if(empty($this->session->userdata('usuario_name'))){
+                 
+                redirect(base_url().'index.php/Login/adminuser');
+            }
+            $this->load->helper(array('form','url','date','html'));
+            $data["title"] = "GeoValores";
+            $data["title_page"] = "Publicar Remates";
+            $this->load->view('ventas/remates', $data);
         }
         
         public function saveInfo() {
-        	$idUsuario =  $this->session->userdata('usuario');
             $this->load->model('DBModel');
            	$data = $_POST['data'];
             $array_data = array();
@@ -73,7 +80,8 @@ class Publicar extends CI_Controller {
                 }
                 $c++;
             }
-            $array_publicacion['usuarios_idUsuario'] =  $idUsuario;
+            $array_publicacion['usuarios_idUsuario'] =  $this->session->userdata('usuario_id');
+            
           	$id_publicacion = $this->DBModel->InsertTable('publicaciones',$array_publicacion);
           	$msj = '';
              if($id_publicacion !== 'error'){

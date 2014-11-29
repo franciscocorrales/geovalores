@@ -26,16 +26,30 @@ class Login extends CI_Controller
         }
         else
         {
-        $nom = $this->input->post('username');
-       
-        $pass = sha1($this->input->post('password'));
-        //comprobamos si existen en la base de datos enviando los datos al modelo
-        $login = $this->LoginModel->login_user($nom, $pass);
-        if ($login)
-        {
-             redirect(base_url().'index.php/Login/adminuser');
-        
-	}
+            $nom = $this->input->post('username');
+
+            $pass = sha1($this->input->post('password'));
+            //comprobamos si existen en la base de datos enviando los datos al modelo
+            $login = $this->LoginModel->login_user($nom, $pass);
+            if ($login)
+            {
+                foreach ( $login as $key => $dat)
+            {
+                if($key == 'nombre')
+                { $user =  $dat; } 
+                
+                if($key == 'idUsuario')
+                { $user_id =  $dat; } 
+                
+                
+                
+            }
+            
+                $this->session->set_userdata('usuario_name',$user); 
+                $this->session->set_userdata('usuario_id',$user_id); 
+                redirect(base_url().'index.php/Login/adminuser');
+
+            }
         }
         }
 	public function logout()

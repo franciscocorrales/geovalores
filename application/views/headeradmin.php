@@ -13,8 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo link_tag("css/bootstrap.css");  ?>
     <?php echo link_tag("css/bootstrap-table.css");  ?>
     <?php echo link_tag("css/template.css");  ?>
-    
-     <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
+    <script src=<?php echo base_url().'script/ventas.js'?> ></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="<?php echo base_url().'script/bootstrap-table.js' ?>"></script>
      <script type='text/javascript'>
@@ -69,6 +69,7 @@ $(document).ready(function() {
 }
 #header > .bienvenido {
     float: right;
+    text-align: right;
 }
 #header > .bienvenido > a{
     color: #ffffff;
@@ -96,9 +97,10 @@ $logo = array(
                 </div>
             <div class="bienvenido">
                    <?php 
-                            if($this->session->userdata('usuario')== TRUE){ ?>
+                   $user = $this->session->userdata('usuario_name');     
+                   if($this->session->userdata('usuario')== TRUE){ ?>
                                 
-				<h1 style="text-align: center">Bienvenido de nuevo <?=$this->session->userdata('perfil')?></h1>
+				<h1 style="text-align: center">Bienvenido, <?=$user;?></h1>
                             <?=anchor(base_url().'index.php/Login/logout', 'Cerrar sesión'); }?>
             </div>
             

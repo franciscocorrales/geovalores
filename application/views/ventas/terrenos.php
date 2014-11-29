@@ -1,5 +1,5 @@
 <?php include '/../headeradmin.php';?>
-<script src=<?php echo base_url().'script/ventas.js'?> ></script>
+
 
 <div id="siteframe">
     <div id="content">
@@ -7,11 +7,13 @@
             <div class="title-page"><h1><?php echo $title_page ?></h1></div>
             <?php include '/../columnMenu.php' ;?>
             <div class="box-publicar" id="publi-detalles">
-                <form name="info-venta" class="info-venta">
+                <form enctype="multipart/form-data" name="info-venta" class="info-venta">
                     <ul>
                         <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="terreno" ></li>
                         <li><label>Titulo</label></li>
                         <li><input type="text" name="titulo" id="titulo" value="" required></li>
+                        <li><label>Fotos</label></li>
+                        <li><input type="file" name="photo1" id="photo1"></li>
                          <li><label>Tiempo de la Publicacion</label></li>
                         <li>
                             <select name="tiempo" id="tiempo">
@@ -49,6 +51,17 @@
                             <input type="text" name="lat" id="lat" value="" class="numbersOnly"/>
                             <input type="text" name="lng" id="lng" value="" class="numbersOnly"/>
                         </li>
+                        <li><label>Direccion</label></li>
+                        <li><select name="address" id="address" value="" required style="">
+                            <option value="San Jose">San José</option>
+                            <option value="Alajuela">Alajuela</option>
+                            <option value="Cartago">Cartago</option>
+                            <option value="Guanacaste">Guanacaste</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="Puntarenas">Puntarenas</option>
+                            <option value="Limon">Limón</option>
+                        </select></li>
+                        
                         <li><label>Tamaño del Terreno</label></li>
                         <li>
                             <input type="text" name="tamano-terreno" id="tamano-terreno" value="" class="numbersOnly"> 

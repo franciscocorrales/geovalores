@@ -35,6 +35,9 @@
 function SaveInfo()
 {
     var data =  $( ".info-venta" ).serializeArray();
+    var file_data = $('#photo1')[0].files[0];//
+    var fd = new FormData();    
+    fd.append( 'files', file_data );
     var titulo = $('#titulo').val();
     var precioDolares = $('#precio-dolar').val();
     var precioColones =  $('#precio-colones').val();
@@ -84,14 +87,15 @@ function SaveInfo()
 	            type:'POST',
 	            url: '../Publicar/saveInfo',
 	            data:{
-	                data:data
+	                data:data,
+                        archivos:fd
 	            },
 	            success:function(data){
 	                if(data !== null){
-	                    confirm("Se registro correctamente!!");
+	                    alert("Se registro correctamente!!");
 	                    $(".publicar-type").show();
 	                }else{
-	                   confirm("No se registro correctamente!!");
+	                   alert("No se registro correctamente!!");
 	                }
 	            },
 	            error:function(){

@@ -10,7 +10,7 @@
 		<div id="footer-extra"></div>
 		<div id="social-header">
 			<div id="fb-header"><a target="_blank" href="#"> <?php echo img('images/facebook.png');?></a></div>
-		    <div id="twitter-header"><a target="_blank" href="#"><?php echo img('images/twitter.png');?></a></div>
+		    
 		    
 		</div>
 		<?php echo br(2); ?>

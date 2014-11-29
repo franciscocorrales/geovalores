@@ -10,7 +10,7 @@
                     <ul>
                         <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="construcciones" ></li>
                         <li><label>Titulo</label></li>
-                        <li><input type="text" name="titulo" id="titulo" value="" required></li>
+                        <li><input type="text" name="name" id="name" value="" required></li>
                          <li><label>Tiempo de la Publicacion</label></li>
                         <li>
                             <select name="tiempo" id="tiempo">
@@ -24,13 +24,13 @@
                         <li>
                             <select name="tipo-construccion" id="tipo-construccion">
                                 <optgroup>
-                                    <option value="casa">Casa</option>
-                                    <option value="apartamento">Apartamento</option>
-                                    <option value="condonimio">Condominio</option>
-                                    <option value="oficina">Oficina</option>
-                                    <option value="deificio">Edificio</option>
-                                    <option value="industria">Industria</option>
-                                    <option value="bodega">Bodega</option>
+                                    <option value="Casa">Casa</option>
+                                    <option value="Apartamento">Apartamento</option>
+                                    <option value="Condonimio">Condominio</option>
+                                    <option value="Oficina">Oficina</option>
+                                    <option value="Edificio">Edificio</option>
+                                    <option value="Industria">Industria</option>
+                                    <option value="Bodega">Bodega</option>
                                 </optgroup>
                             </select>
                         </li>
@@ -48,6 +48,16 @@
                             <input type="text" name="lat" id="lat" value="" class="numbersOnly"/>
                             <input type="text" name="lng" id="lng" value="" class="numbersOnly"/>
                         </li>
+                        <li><label>Direccion</label></li>
+                        <li><select name="address" id="address" value="" required style="">
+                            <option value="San Jose">San José</option>
+                            <option value="Alajuela">Alajuela</option>
+                            <option value="Cartago">Cartago</option>
+                            <option value="Guanacaste">Guanacaste</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="Puntarenas">Puntarenas</option>
+                            <option value="Limon">Limón</option>
+                        </select></li>
                         <li><label>Tamaño del Terreno</label></li>
                         <li>
                             <input type="text" name="tamano-terreno" id="tamano-terreno" value="" class="numbersOnly"> 

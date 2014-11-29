@@ -15,11 +15,12 @@ class LoginModel extends CI_Model {
 		$query = $this->db->get('usuarios');
 		if($query->num_rows() == 1)
 		{
-			$usauario = $query->row();
-                        $this->session->set_userdata('usuario',$usauario->idUsuario);
-			return $usauario;
+                        $this->session->set_userdata('usuario',TRUE);
+                        $query->result();
+			return $query->row();
                         
-		}else{
+		}
+                else {
                     $this->session->set_flashdata('usuario_incorrecto','Los datos introducidos son incorrectos');
                     redirect(base_url(),'refresh');
 		}

@@ -5,12 +5,30 @@ $submit = array('name' => 'submit', 'id' => 'loginboton', 'value' => 'Iniciar se
 $form = array('id' => 'loginform');
 ?>
 <?php include ("headeradmin.php") ;?>
+<style>
+.content-padding {
+    margin: 0 auto;
+    width: 75%;
+}
+.bienvenida{
+    font-size: 32px;
+    line-height: 29px;
+    margin-left: 30px;
+    position: absolute;
+    text-align: center;
+    width: 700px;
+}
+</style>
 <div id="siteframe">
 	<div id="content">
             <div class="content-padding">
              <?php 
                             if($this->session->userdata('usuario')== TRUE){ ?>
-                           
+                <h1> ¡Bienvenido a la comunidad Geovalores!</h1>
+                <span class="bienvenida">Le invitamos a disfrutar de nuestros servicios en geolocalización de propiedades, navegue en nuestro mapa y 
+                      encuentre oportunidades en una forma más ágil y sencilla.
+                      Además mapee su anuncio en forma gratuita ahora!!!</span>
+
              <?php } else {?>
                 
                     
