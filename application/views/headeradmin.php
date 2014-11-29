@@ -93,7 +93,7 @@ $logo = array(
 	<div id="header">
             
 		<div id="header-logo">
-			<a href="/"><?php echo img($logo);?></a>
+			<a href="<?php echo base_url(); ?>index.php"><?php echo img($logo);?></a>
                 </div>
             <div class="bienvenido">
                    <?php 

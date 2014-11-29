@@ -70,6 +70,7 @@ class Inicio extends CI_Controller {
 	{
                
 		$title["title"] = "GeoValores";
+                $title['mapa'] = TRUE;
 		$this->load->view('Inicio', $title);
 	}
 

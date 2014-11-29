@@ -9,15 +9,16 @@
 				<table class="table">
 				   <thead>
 				      <tr>
-				         <th>Tipo Construcción</th>
+				         <th>Tipo Construcciï¿½n</th>
 				         <th>Tiempo</th>
-				         <th>Fecha Publicación</th>
+				         <th>Fecha Publicaciï¿½n</th>
 				         <th>Editar</th>
 				         
 				      </tr>
 				   </thead>
 				   <tbody>
 				   <?php 
+                                   if($publicaciones){
 				   		$color = array('active','danger','warning','success');
 				   		$cont = 0;
 				   		foreach ($publicaciones as $value){
@@ -26,7 +27,7 @@
 							<td><?php echo $value['tipo_categoria']?></td>
 							<td><?php echo $value['tiempo']?></td>
 							<td><?php echo $value['date_publicacion']?></td>
-							<td><a href="#" class="btn btn-default btn-lg active" role="button">Link</a></td>	
+							<td><a href="#" class="btn btn-default btn-lg active" role="button">Editar</a></td>	
 						</tr>
 					<?php 
 							$cont +=1;
@@ -35,7 +36,7 @@
 								$cont = 0;
 							}			
 				   		}
-				   
+                                   }
 				   ?>   
 				   </tbody>
 				</table>

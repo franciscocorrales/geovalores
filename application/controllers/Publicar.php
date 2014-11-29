@@ -10,7 +10,7 @@ class Publicar extends CI_Controller {
                $this->load->library('session');
 	}
        
-        public function contrucciones()
+        public function publicar()
         {
 		$this->load->helper(array('form','url','date','html'));
 		$title["title"] = "GeoValores";
@@ -81,6 +81,7 @@ class Publicar extends CI_Controller {
                 $c++;
             }
             $array_publicacion['usuarios_idUsuario'] =  $this->session->userdata('usuario_id');
+            $array_publicacion['date_publicacion'] = now() ;
             
           	$id_publicacion = $this->DBModel->InsertTable('publicaciones',$array_publicacion);
           	$msj = '';

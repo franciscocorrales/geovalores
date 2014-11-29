@@ -2,7 +2,7 @@
 <script src=<?php echo base_url().'script/ventas.js'?> ></script>
 <style>
     #siteframe {
-    height: 1140px;
+    min-height: 1140px;
 }
 </style>
 

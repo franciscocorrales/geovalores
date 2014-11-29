@@ -10,9 +10,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo link_tag("css/global.css");  ?>
     <?php echo link_tag("css/template.css");  ?>
     <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
+    <script src=<?php echo base_url().'script/login.js'?> ></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src=<?php echo base_url().'script/googleMaP.js'?> ></script>
-    <script src=<?php echo base_url().'script/login.js'?> ></script>
+    
     <script type="text/javascript">
 	$(document).ready(
 	function () {
@@ -24,6 +25,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 	);
 	</script>
+        <style>
+            #login .inicida{
+                color: #444;
+                display: inline-block;
+                font-weight: bold;
+                height: 25px;
+                line-height: 25px;
+                padding: 0 8px;
+                text-decoration: none;
+                text-shadow: 0 1px 0 #fff;
+            }
+        </style>
 </head>
 <body>
 
@@ -47,6 +60,10 @@ $form = array('id' => 'loginform');
 	<div id="header">
             <nav>
                     <ul>
+                      <?php if ($this->session->userdata('usuario_id')) {?>
+                        <li id="login"> <span class="inicida"> En la sesion de  <a href="<?php echo base_url(); ?>index.php/Login/adminuser"?><?=$this->session->userdata('usuario_name');?> </a></span> </li> 
+                        <li id="signup"><?=anchor(base_url().'index.php/Login/logout', 'Cerrar sesión'); ?></li>
+                      <?php } else { ?>
                       <li id="login">
                         <a id="login-trigger" href="#">
                           Inicio de sesion<span>▼</span>
@@ -68,6 +85,7 @@ $form = array('id' => 'loginform');
                       <li id="signup">
                         <a href="<?php echo base_url(); ?>index.php/Register/register">Registacion</a>
                       </li>
+                      <?php } ?>
                     </ul>
                   </nav>
 		<div id="header-logo">
@@ -105,6 +123,10 @@ $form = array('id' => 'loginform');
 				</ul>
 			</div>
 		</div>
-		<a class="publicar" href="<?php echo base_url(); ?>index.php/Register/register">Publica su Anuncio gratis</a>
+                <?php if ($this->session->userdata('usuario_id')) {?>
+		<a class="publicar" href="<?php echo base_url(); ?>index.php/Publicar/publicar">Publica su Anuncio gratis</a>
+                <?php } else { ?>
+                <a class="publicar" href="<?php echo base_url(); ?>index.php/Register/register">Publica su Anuncio gratis</a>
+                <?php } ?>
 	</div>
 </div>
