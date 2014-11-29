@@ -11,9 +11,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo link_tag("css/reset.css");  ?>
     <?php echo link_tag("css/global.css");  ?>
     <?php echo link_tag("css/bootstrap.css");  ?>
+    <?php echo link_tag("css/bootstrap-table.css");  ?>
     <?php echo link_tag("css/template.css");  ?>
-    <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
+    
+     <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="<?php echo base_url().'script/bootstrap-table.js' ?>"></script>
      <script type='text/javascript'>
             var map = null;
 var infoWindow = null;
@@ -107,8 +110,8 @@ $logo = array(
 				<ul id="nav" class="mainmenu">
 					<li class="mainmenu-item mainmenu-item-5346 active first"><a href="<?php echo base_url(); ?>index.php/Login/adminuser"><span>Inicio</span></a></li>
 					
-					<li class="mainmenu-item mainmenu-item-5381  "><a href="<?php echo base_url(); ?>/index.php/"><span>Ver Mis Publicacion</span></a></li>
-					<li class="mainmenu-item mainmenu-item-5441  "><a href="<?php echo base_url(); ?>index.php/Publicar/publicar"><span>Publicar</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5381  "><a href="<?php echo base_url(); ?>index.php/Publicadas/publicacion"><span>Mis Publicacion</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5441  "><a href="<?php echo base_url(); ?>index.php/Publicar/contrucciones"><span>Publicar</span></a></li>
 					
 				</ul>
                             <?php } ?>

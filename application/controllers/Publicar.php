@@ -7,40 +7,57 @@ class Publicar extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
                $this->load->helper(array('form','url','date','html'));
+               $this->load->library('session');
 	}
        
         public function contrucciones()
         {
-            $this->load->helper(array('form','url','date','html'));
-            $data["title"] = "GeoValores";
-            $data["title_page"] = "Publicar Contrucciones";
-            $this->load->view('ventas/contrucciones', $data);
+        	$idUsuario =  $this->session->userdata('usuario');
+        	if(!empty($idUsuario)){
+	            $this->load->helper(array('form','url','date','html'));
+	            $data["title"] = "GeoValores";
+	            $data["title_page"] = "Publicar Contrucciones";
+	            $this->load->view('ventas/contrucciones', $data);
+        	}
         }
         
         public function terrenos() {
-            $this->load->helper(array('form','url','date','html'));
-            $data["title"] = "GeoValores";
-            $data["title_page"] = "Publicar Terrenos";
-            $this->load->view('ventas/terrenos', $data);
+        	$idUsuario =  $this->session->userdata('usuario');
+        	if(!empty($idUsuario)){
+        		$this->load->helper(array('form','url','date','html'));
+	            $data["title"] = "GeoValores";
+	            $data["title_page"] = "Publicar Terrenos";
+	            $this->load->view('ventas/terrenos', $data);
+        	}
+            
         }
         
         public function alquileres() {
-            $this->load->helper(array('form','url','date','html'));
-            $data["title"] = "GeoValores";
-            $data["title_page"] = "Publicar Alquileres";
-            $this->load->view('ventas/alquileres', $data);
+        	$idUsuario =  $this->session->userdata('usuario');
+        	if(!empty($idUsuario)){
+        		$this->load->helper(array('form','url','date','html'));
+	            $data["title"] = "GeoValores";
+	            $data["title_page"] = "Publicar Alquileres";
+	            $this->load->view('ventas/alquileres', $data);
+	        	}
+            
         }
         
         public function remates() {
-            $this->load->helper(array('form','url','date','html'));
-            $data["title"] = "GeoValores";
-            $data["title_page"] = "Publicar Remates";
-            $this->load->view('ventas/remates', $data);
+        	$idUsuario =  $this->session->userdata('usuario');
+        	if(!empty($idUsuario)){
+        		$this->load->helper(array('form','url','date','html'));
+	            $data["title"] = "GeoValores";
+	            $data["title_page"] = "Publicar Remates";
+	            $this->load->view('ventas/remates', $data);
+        	}
+            
         }
         
         public function saveInfo() {
+        	$idUsuario =  $this->session->userdata('usuario');
             $this->load->model('DBModel');
-           $data = $_POST['data'];
+           	$data = $_POST['data'];
             $array_data = array();
             $array_publicacion = array();
             $c=0;
@@ -56,7 +73,7 @@ class Publicar extends CI_Controller {
                 }
                 $c++;
             }
-            $array_publicacion['usuarios_idUsuario'] =  12;
+            $array_publicacion['usuarios_idUsuario'] =  $idUsuario;
           	$id_publicacion = $this->DBModel->InsertTable('publicaciones',$array_publicacion);
           	$msj = '';
              if($id_publicacion !== 'error'){

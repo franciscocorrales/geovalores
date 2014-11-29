@@ -9,15 +9,11 @@
                         <li class="submenu-item"><a href="<?php echo base_url(); ?>index.php/Publicar/terrenos"><span>Terrenos</span></a></li>
                         <li class="submenu-item"><a href="<?php echo base_url(); ?>index.php/Publicar/alquileres"><span>Alquileres</span></a></li>
                         <li class="submenu-item"><a href="<?php echo base_url(); ?>index.php/Publicar/remates"><span>Remates</span></a></li>
+                    </ul>
                 </li>
                 
                  <li class="mainmenu-item">
-                    <a href="/categorias/"><span>Puplicaciones</span></a>
-                    <ul class="submenu-colunm">
-                        <li class="submenu-item"><a href="<?php echo base_url(); ?>index.php/Publicadas/contrucciones"><span>Contrucciones</span></a></li>
-                        <li class="submenu-item"><a href="<?php echo base_url(); ?>index.php/Publicadas/terrenos"><span>Terrenos</span></a></li>
-                        <li class="submenu-item"><a href="<?php echo base_url(); ?>index.php/Publicadas/alquileres"><span>Alquileres</span></a></li>
-                        <li class="submenu-item"><a href="<?php echo base_url(); ?>index.php/Publicadas/remates"><span>Remates</span></a></li>
+                    <a href="<?php echo base_url(); ?>index.php/Publicadas/publicacion"><span>Mis Puplicaciones</span></a>
                 </li>
             </ul>
         </div>
