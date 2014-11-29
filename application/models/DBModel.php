@@ -216,6 +216,8 @@
 
 			
 		}
+		
+		
                 
                 public function InsertTable($tabla,$data) {
                     try {
@@ -224,6 +226,26 @@
                     } catch (Exception $exc) {
                         return 'error';
                     }
+                }
+                
+                public function selectJoinPublicaciones($table1,$table2,$idUser,$type){
+                	$sql = "SELECT *
+							FROM {$table1} T1
+							INNER JOIN {$table2} T2 ON T1.idPublicacion = T2.idPublicacion
+                			where T2.usuarios_idUsuario = {$idUser} and tipo_categoria = {$type}
+                			;" ;
+                	$query = $this->db->query($query);
+                
+                
+	                $arr=null;
+	                if($query->num_rows() > 0){
+	                	foreach($query->result() as $obj){
+	                		$arr[] = get_object_vars($obj);
+	                	}
+	                }else{
+	                	return null;
+	                }
+	                return $arr;
                 }
 	}
 ?>
