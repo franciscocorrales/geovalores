@@ -81,7 +81,7 @@ class Publicar extends CI_Controller {
                 $c++;
             }
             $array_publicacion['usuarios_idUsuario'] =  $this->session->userdata('usuario_id');
-            $array_publicacion['date_publicacion'] = now() ;
+            $array_publicacion['date_publicacion'] = date('Y-m-d H:i:s');
             
           	$id_publicacion = $this->DBModel->InsertTable('publicaciones',$array_publicacion);
           	$msj = '';

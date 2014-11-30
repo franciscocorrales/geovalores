@@ -204,5 +204,23 @@
 	
 		
 	}
+        public function selectJoinPublicaciones($table1,$table2){
+                	$sql = "SELECT *
+							FROM {$table1} T1
+							INNER JOIN {$table2} T2 ON T1.idPublicacion = T2.idPublicacion
+                			;" ;
+                	$query = $this->db->query($sql);
+                
+                
+	                $arr=null;
+	                if($query->num_rows() > 0){
+	                	foreach($query->result() as $obj){
+	                		$arr[] = get_object_vars($obj);
+	                	}
+	                }else{
+	                	return null;
+	                }
+	                return $arr;
+                }
 
 }

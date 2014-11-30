@@ -248,7 +248,7 @@
                 	$sql = "SELECT *
 							FROM {$table1} T1
 							INNER JOIN {$table2} T2 ON T1.idPublicacion = T2.idPublicacion
-                			where T2.usuarios_idUsuario = {$idUser}	;" ;
+                			where T2.idUsuario = {$idUser}	;" ;
                 	$query = $this->db->query($sql);
                 
                 

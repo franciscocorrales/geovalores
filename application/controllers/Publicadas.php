@@ -24,6 +24,19 @@ class Publicadas extends CI_Controller {
 		}
 		
 	}
+        public function favorito()
+	{
+		$idUsuario =  $this->session->userdata('usuario');
+		if(!empty($idUsuario)){
+			
+			$this->load->helper(array('form','url','date','html'));
+			$data["title"] = "GeoValores";
+			$data["title_page"] = "Mis Favoritos";
+			$data["publicaciones"] = $this->DBModel->selectJoinPublicaciones('publicaciones','publicaciones_marcadas',$this->session->userdata('usuario_id'));
+			$this->load->view('misVentas/favoritos', $data);
+		}
+		
+	}
 	
 	
 }

@@ -1,16 +1,6 @@
  $(document).ready(function() {
     
-	$('#precio-dolar').change(function(){
-	  var precio = 532; 
-	  var resultado = $('#precio-dolar').val() * precio;
-	  $('#precio-colones').val(resultado);
-	});
 	
-	$('#precio-colones').change(function(){
-	  var precio = 532;
-	  var resultado = $('#precio-colones').val() / precio;
-	  $('#precio-dolar').val(resultado);
-	});
 
  
  $("input[name=cochera]:radio").change(function(){
@@ -35,9 +25,7 @@
 function SaveInfo()
 {
     var data =  $( ".info-venta" ).serializeArray();
-    var file_data = $('#photo1')[0].files[0];//
-    var fd = new FormData();    
-    fd.append( 'files', file_data );
+    
     var titulo = $('#titulo').val();
     var precioDolares = $('#precio-dolar').val();
     var precioColones =  $('#precio-colones').val();
@@ -87,8 +75,7 @@ function SaveInfo()
 	            type:'POST',
 	            url: '../Publicar/saveInfo',
 	            data:{
-	                data:data,
-                        archivos:fd
+	                data:data
 	            },
 	            success:function(data){
 	                if(data !== null){

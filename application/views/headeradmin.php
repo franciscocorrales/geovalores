@@ -112,7 +112,8 @@ $logo = array(
 				<ul id="nav" class="mainmenu">
 					<li class="mainmenu-item mainmenu-item-5346 active first"><a href="<?php echo base_url(); ?>index.php/Login/adminuser"><span>Inicio</span></a></li>
 					
-					<li class="mainmenu-item mainmenu-item-5381  "><a href="<?php echo base_url(); ?>index.php/Publicadas/publicacion"><span>Mis Publicacion</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5381  "><a href="<?php echo base_url(); ?>index.php/Publicadas/publicacion"><span>Mis Publicaciones</span></a></li>
+                                        <li class="mainmenu-item mainmenu-item-5381  "><a href="<?php echo base_url(); ?>index.php/Publicadas/favorito"><span>Mis Favoritos</span></a></li>
 					<li class="mainmenu-item mainmenu-item-5441  "><a href="<?php echo base_url(); ?>index.php/Publicar/contrucciones"><span>Publicar</span></a></li>
 					
 				</ul>

@@ -25,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 	);
 	</script>
+        
         <style>
             #login .inicida{
                 color: #444;

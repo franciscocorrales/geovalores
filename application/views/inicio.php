@@ -19,52 +19,39 @@
 
                             <div class="moreNews">
                                 <div class="titles">
-                                    <h3>Noticias y Eventos</h3>
+                                    <h3>Destacadas</h3>
                                 </div>
+                               <?php
+                               $i = 0;
+                               foreach ($publicaciones as $value){
+                                   
+                                   
+                               ?>    
+                               
                                 <div class="news">
+                                    <?php
+                                     if ($i == 0) {
+                               ?>  
                                    <div class="newDate">
-                                        <h4>21/6/2014</h4>
+                                        <h4><?php echo $value['date_publicacion']?></h4>
                                     </div>
+                                    <?php } ?>
+                                    <?php if ($value['field_name'] == "observacion") { ?>
                                     <div class="newContent">
-                                        <p>En primer lugar En esta publicidad es la necesidad de cualquier organización</p>
+                                        
+                                        <p><?php echo $value['field_value']?></p>
+                                       
                                     </div>
+                                    <?php  } ?>
+                                    <?php
+                                     if ($i == 0) {
+                               ?>  
                                     <div class="read-more">
-                                        <a href="" ><span>leer Más</span></a>
+                                        <a href="<?php echo $value['idPublicacion']?>" ><span>leer Más</span></a>
                                     </div>
+                                     <?php } ?>
                                 </div>
-                                <div class="news">
-                                   <div class="newDate">
-                                        <h4>21/6/2014</h4>
-                                    </div>
-                                    <div class="newContent">
-                                        <p>En primer lugar En esta publicidad es la necesidad de cualquier organización</p>
-                                    </div>
-                                    <div class="read-more">
-                                        <a href="" ><span>leer Más</span></a>
-                                    </div>
-                                </div>
-                                <div class="news">
-                                   <div class="newDate">
-                                        <h4>21/6/2014</h4>
-                                    </div>
-                                    <div class="newContent">
-                                        <p>En primer lugar En esta publicidad es la necesidad de cualquier organización</p>
-                                    </div>
-                                    <div class="read-more">
-                                        <a href="" ><span>leer Más</span></a>
-                                    </div>
-                                </div>
-                                <div class="news">
-                                   <div class="newDate">
-                                        <h4>21/6/2014</h4>
-                                    </div>
-                                    <div class="newContent">
-                                        <p>En primer lugar En esta publicidad es la necesidad de cualquier organización</p>
-                                    </div>
-                                    <div class="read-more">
-                                        <a href="" ><span>leer Más</span></a>
-                                    </div>
-                                </div>
+                               <?php $i++;  } ?>
                             </div>
                         </div>   
                     </div>
@@ -96,23 +83,7 @@
                                 </form>
                             </div>
                         <div id="google_map"></div>
-                        <div class="content-search">
-                            <div class="stand-out content-description">
-                                <div class="titles">
-                                    <h3>Casas Destacadas</h3>
-                                </div>
-                                <div class='stand-house'>
-                                    <?php echo img('images/house.png');?>
-                                </div>
-                                <div class="description-house">
-                                    <p>En primer lugar En esta publicidad es la necesidad de cualquier organización a la fama de su empresa en el mundo. Nuestro Café es en esta época. En esta publicidad es la necesidad.... </p>
-                                </div>
-                                <div class="read-more">
-                                    <a href="" ><span>leer Más</span></a>
-                                </div>
-                            </div>
-                            
-                        </div>        
+                        
                     </div>
                         
                     </div>
