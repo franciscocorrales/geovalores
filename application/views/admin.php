@@ -33,17 +33,17 @@ $form = array('id' => 'loginform');
                 
                     
                         <div id="login-content">
-                          <?=form_open('/Login/new_user', $form)?>
+                          <?php echo form_open('/Login/new_user', $form)?>
                             <fieldset id="inputs">
-                              <?=form_input($username)?><p><?=form_error('username')?>   
-                              <?=form_password($password)?><p><?=form_error('password')?>
+                              <?php echo form_input($username)?><p><?=form_error('username')?>   
+                              <?php echo form_password($password)?><p><?=form_error('password')?>
                             </fieldset>
                             <fieldset id="actions">
-                              <?=form_submit($submit)?>
+                              <?php echo  form_submit($submit)?>
 					
                               <label><input type="checkbox" checked="checked"> Keep me signed in</label>
                             </fieldset>
-                          <?=form_close()?>
+                          <?php echo form_close()?>
                         </div>                     
                       
              <?php } ?>

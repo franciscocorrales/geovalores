@@ -52,9 +52,9 @@ $logo = array(
 );
 
 
-$username = array('name' => 'username', 'placeholder' => 'Nombre de usuario');
-$password = array('name' => 'password',	'placeholder' => 'Introduce tu password');
-$submit = array('name' => 'submit', 'id' => 'loginboton', 'value' => 'Iniciar sesión', 'title' => 'Iniciar sesión');
+$username = array('name' => 'username', 'id' => 'username', 'placeholder' => 'Nombre de usuario');
+$password = array('name' => 'password',	'id' => 'password', 'placeholder' => 'Introduce tu password');
+$submit = array('name' => 'submit', 'id' => 'loginboton', 'content' => 'Iniciar sesión', 'title' => 'Iniciar sesión', 'onclick' => "loginUser();");
 $form = array('id' => 'loginform');
 ?>
 <div id="headerframe">
@@ -70,13 +70,13 @@ $form = array('id' => 'loginform');
                           Inicio de sesion<span>▼</span>
                         </a>
                         <div id="login-content">
-                          <?=form_open('/Login/new_user', $form)?>
+                          <?=form_open('Login/new_user', $form)?>
                             <fieldset id="inputs">
                               <?=form_input($username)?><p><?=form_error('username')?>   
                               <?=form_password($password)?><p><?=form_error('password')?>
                             </fieldset>
                             <fieldset id="actions">
-                              <?=form_submit($submit)?>
+                              <?=  form_button($submit)?>
 					
                               <label><input type="checkbox" checked="checked"> Keep me signed in</label>
                             </fieldset>

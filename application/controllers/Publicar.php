@@ -18,7 +18,8 @@ class Publicar extends CI_Controller {
 	}
         public function contrucciones()
         {
-            if(empty($this->session->userdata('usuario_name'))){
+            $idUsuario =  $this->session->userdata('usuario');
+            if(empty($idUsuario)){
                  
                 redirect(base_url().'index.php/Login/adminuser');
             }
@@ -30,7 +31,8 @@ class Publicar extends CI_Controller {
         }
         
         public function terrenos() {
-            if(empty($this->session->userdata('usuario_name'))){
+            $idUsuario =  $this->session->userdata('usuario');
+            if(empty($idUsuario)){
                  
                 redirect(base_url().'index.php/Login/adminuser');
             }
@@ -41,7 +43,8 @@ class Publicar extends CI_Controller {
         }
         
         public function alquileres() {
-            if(empty($this->session->userdata('usuario_name'))){
+            $idUsuario =  $this->session->userdata('usuario');
+            if(empty($idUsuario)){
                  
                 redirect(base_url().'index.php/Login/adminuser');
             }
@@ -52,7 +55,8 @@ class Publicar extends CI_Controller {
         }
         
         public function remates() {
-            if(empty($this->session->userdata('usuario_name'))){
+            $idUsuario =  $this->session->userdata('usuario');
+            if(empty($idUsuario)){
                  
                 redirect(base_url().'index.php/Login/adminuser');
             }
@@ -65,6 +69,12 @@ class Publicar extends CI_Controller {
         public function saveInfo() {
             $this->load->model('DBModel');
            	$data = $_POST['data'];
+                foreach ($_FILES["images"]["error"] as $key => $error) {
+                    if ($error == UPLOAD_ERR_OK) {
+                      $name = $_FILES["images"]["name"][$key];
+                      move_uploaded_file( $_FILES["images"]["tmp_name"][$key], "uploads/" . $_FILES['images']['name'][$key]);
+                    }
+                  }
             $array_data = array();
             $array_publicacion = array();
             $c=0;
