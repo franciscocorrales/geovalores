@@ -244,6 +244,42 @@
                 }
                 
                 
+                public  function selectDetailsPublicacion($table,$idPublicacion)
+                {
+                	$sql = "SELECT *
+                				FROM {$table}
+                						where idPublicacion = {$idPublicacion}	;" ;
+                	$query = $this->db->query($sql);
+                	                	
+                	$arr=null;
+                	if($query->num_rows() > 0){
+                		foreach($query->result() as $obj){
+                			$arr[] = get_object_vars($obj);
+                		}
+                	}else{
+                		return null;
+                	}
+                	return $arr;
+                	
+                }
+                
+                public function selectPublicacion($table,$idPublicacion){
+                	$sql = "SELECT * FROM " .$table." where idPublicacion = ".$idPublicacion.";" ;
+                	$query = $this->db->query($sql);
+                
+                	$arr=null;
+                	if($query->num_rows() > 0){
+                		foreach($query->result() as $obj){
+                			$arr[] = get_object_vars($obj);
+                		}
+                	}else{
+                		return null;
+                	}
+                	return $arr;
+                }
+                
+                
+                
                 public function selectJoinPublicaciones($table1,$table2,$idUser){
                 	$sql = "SELECT *
 							FROM {$table1} T1

@@ -48,7 +48,7 @@
                         <li>
                             <div class="local-map">
                                 <div id="google_map"></div>
-                            </div
+                            </div>
                           
                         </li>
                         <li>
@@ -124,9 +124,9 @@
                                 <option value="jaccussi">Jaccussi</option>
                             </select>
                         </li>
-                        <li><label>Cantidad Cuartos</label></li>
+                        <li><label>Cantidad Pisos</label></li>
                         <li>
-                            <select name="cantidad-cuartos" id="cantidad-cuartos">
+                            <select name="cantidad-pisos" id="cantidad-pisos">
                                 <?php
                                     for ($i=0; $i<=50; $i++)
                                     {

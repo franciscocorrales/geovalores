@@ -15,9 +15,11 @@ class LoginModel extends CI_Model {
 		$query = $this->db->get('usuarios');
 		if($query->num_rows() == 1)
 		{
-                        $this->session->set_userdata('usuario',TRUE);
-                        $query->result();
-			return $query->row();
+			$usuario = $query->row();
+			$this->session->set_userdata('usuario',TRUE);
+			$this->session->set_userdata('idUsuario',$usuario->idUsuario);
+            $query->result();
+			return $usuario ;
                         
 		}
                 else {

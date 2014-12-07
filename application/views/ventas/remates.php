@@ -10,7 +10,7 @@
             <div class="box-publicar" id="publi-detalles">
                 <form name="info-venta" class="info-venta">
                     <ul>
-                        <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="alquileres" ></li>
+                        <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="remate" ></li>
                         <li><label>Titulo</label></li>
                         <li><input type="text" name="name" id="name" value="" required></li>
                          <li><label>Tiempo de la Publicacion</label></li>

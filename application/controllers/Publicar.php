@@ -10,19 +10,14 @@ class Publicar extends CI_Controller {
                $this->load->library('session');
 	}
        
-        public function publicar()
-        {
-		$this->load->helper(array('form','url','date','html'));
-		$title["title"] = "GeoValores";
-		$this->load->view('ventas/ventas', $title);
-	}
         public function contrucciones()
         {
-            $idUsuario =  $this->session->userdata('usuario');
-            if(empty($idUsuario)){
-                 
-                redirect(base_url().'index.php/Login/adminuser');
-            }
+        	$usuario = $this->session->userdata('idUsuario');
+        	
+        	if(empty($usuario)){
+        		 
+        		redirect(base_url().'index.php/Login/adminuser');
+        	}
             
             $this->load->helper(array('form','url','date','html'));
             $data["title"] = "GeoValores";
@@ -31,10 +26,11 @@ class Publicar extends CI_Controller {
         }
         
         public function terrenos() {
-            $idUsuario =  $this->session->userdata('usuario');
-            if(empty($idUsuario)){
+        	$usuario = $this->session->userdata('idUsuario');
+        	
+        	if(empty($usuario)){
                  
-                redirect(base_url().'index.php/Login/adminuser');
+               redirect(base_url().'index.php/Login/adminuser');
             }
             $this->load->helper(array('form','url','date','html'));
             $data["title"] = "GeoValores";
@@ -43,10 +39,11 @@ class Publicar extends CI_Controller {
         }
         
         public function alquileres() {
-            $idUsuario =  $this->session->userdata('usuario');
-            if(empty($idUsuario)){
+        	$usuario = $this->session->userdata('idUsuario');
+        	
+        	if(empty($usuario)){
                  
-                redirect(base_url().'index.php/Login/adminuser');
+               redirect(base_url().'index.php/Login/adminuser');
             }
             $this->load->helper(array('form','url','date','html'));
             $data["title"] = "GeoValores";
@@ -55,10 +52,11 @@ class Publicar extends CI_Controller {
         }
         
         public function remates() {
-            $idUsuario =  $this->session->userdata('usuario');
-            if(empty($idUsuario)){
+        	$usuario = $this->session->userdata('idUsuario');
+        	
+        	if(empty($usuario)){
                  
-                redirect(base_url().'index.php/Login/adminuser');
+              	redirect(base_url().'index.php/Login/adminuser');
             }
             $this->load->helper(array('form','url','date','html'));
             $data["title"] = "GeoValores";
