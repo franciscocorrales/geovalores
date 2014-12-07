@@ -7,17 +7,17 @@
             <?php include_once('/../columnMenu.php') ;?>
             <div class="box-publicar" id="publi-detalles">
                 <form name="info-venta" class="info-venta">
+                <ul>
                 <?php $tipoPublicacion = "";
                 	$c = 0 ;
                 	$map = true;
+                	
                 	 foreach ($publicacion as $value ){?>
+                	
+                	
                 	<?php if (!empty($value['field_name'])) { ?>
-                	<ul>
-                    	<?php if($value['field_name'] == "tipo_categoria"){ ?>
-                    		 <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="<?= $value['field_value']?>" ></li>
-                    	<?php } $tipoPublicacion = $value['field_value']; ?>
-                       
-                        <?php if($value['field_name'] == "name"){ ?>
+                	 
+                    	<?php if($value['field_name'] == "name"){ ?>
                     		<li><label>Titulo</label></li>
                         	<li><input type="text" name="name" id="name" value="<?= $value['field_value']?>" required></li>
                     	<?php } ?>
@@ -58,7 +58,7 @@
                         <?php if($value['field_name'] == "precio-colones"){ ?>
                     		<li><label>Precio Colores</label></li>
                         	<li><input type="text" name="precio-colones" id="precio-colones" value="<?= $value['field_value'] ?>" class="numbersOnly" ></li>
-                        	<li style="display: none;"><input type="text" name="precio-remate-old" id="precio-remate-old" value="<?= $value['field_value']?>" class="numbersOnly"></li>
+                        	<li style="display: none;"><input type="text" name="precio-old" id="precio-remate-old" value="<?= $value['field_value']?>" class="numbersOnly"></li>
 						 <?php } ?>
                          <?php if($value['field_name'] == "lat"){ ?>
                         	<?php if($map === true){ ?>
@@ -347,12 +347,17 @@
 	                            <textarea rows="5" name="observacion" id="observacion"> <?=$value['field_value'] ?></textarea>
 	                        </li>
 						 <?php } ?>
-                        
+                    <?php $c +=1; } ?>
+                    		<?php if(!empty($value['tipo_categoria']) ){ ?>
+                    		 <li><input type="text" name="tipo_categoria" id="tipo_categoria" value="<?= $value['tipo_categoria']?>" style="display: none;" ></li>
+                    		 <li><input type="text" name="idPublicacion" id="idPublicacion" value="<?= $value['idPublicacion']?>" style="display: none;" ></li>
+                    		  
+                    	<?php  $tipoPublicacion = $value['tipo_categoria']; } ?>
+					<?php }?>
                     </ul>
-                    <?php $c +=1; } }?>
                 </form>
                 <div id="btn-save-info">
-                    <input type="button" name="btnSave" value="Guardar" onclick="SaveInfoEdit();">
+                    <input type="button" name="btnSave" value="Guardar" onclick="SaveInfoEditada();">
                 </div>
             </div>
         </div>

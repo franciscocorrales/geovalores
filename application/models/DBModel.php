@@ -228,6 +228,31 @@
                     }
                 }
                 
+                public function UpdateTable($tabla ,$data, $idPublicacion){
+                	try {
+                		$this->db->where('idPublicacion',$idPublicacion);
+                		$this->db->update($tabla, $data);
+                		return true;
+                	} catch (Exception $e) {
+                		return 'error';
+                	}
+                }
+                
+                public function UpdateFieldPublicacion($field_value,$field_name, $idPublicacion, $price=''){
+                	
+                	if(empty($price)){
+                		$query="UPDATE details_fields SET field_value = '$field_value' WHERE field_name = '$field_name' and idPublicacion = $idPublicacion  ";
+                	}
+                	else{
+                		$query="UPDATE details_fields SET field_value = '$field_value',newPrice=$price  WHERE field_name = '$field_name' and idPublicacion = $idPublicacion  ";
+                	}
+                	
+                	$this->db->query($query);
+                	$filas = $this->db->affected_rows();
+                	return $filas;
+				
+                }
+                
                 public function selectPublicaciones($table,$idUser){
                 	$sql = "SELECT * FROM " .$table." where usuarios_idUsuario = ".$idUser.";" ;
                 	$query = $this->db->query($sql);

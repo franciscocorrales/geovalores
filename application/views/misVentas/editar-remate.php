@@ -12,9 +12,7 @@
                     <ul>
                     	<?php $map = true;
                     	 foreach ($publicacion as $value ){?>
-                    	<?php if($value['field_name'] == "tipo_categoria"){ ?>
-                        	<li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="<?= $value['field_value']?>" ></li>
-                        <?php }?>
+                    	 <?php if (!empty($value['field_name'])) { ?>
                         <?php if($value['field_name'] == "name"){ ?>
 	                        <li><label>Titulo</label></li>
 	                        <li><input type="text" name="name" id="name" value="<?= $value['field_value']?>" required></li>
@@ -49,7 +47,7 @@
                         <?php if($value['field_name'] == "precio-remate"){ ?>
 	                        <li><label>Precio Remate</label></li>
 	                        <li><input type="text" name="precio-remate" id="precio-remate" value="<?= $value['field_value']?>" class="numbersOnly"></li>
-	                        <li style="display: none;"><input type="text" name="precio-remate-old" id="precio-remate-old" value="<?= $value['field_value']?>" class="numbersOnly"></li>	                        
+	                        <li style="display: none;"><input type="text" name="precio-old" id="precio-remate-old" value="<?= $value['field_value']?>" class="numbersOnly"></li>	                        
                         <?php }?>
                         <?php if($value['field_name'] == "lat"){ ?>
                         	<?php if($map === true){ ?>
@@ -115,12 +113,19 @@
 	                        <li>
 	                            <textarea rows="5" name="observacion" id="observacion"> <?= $value['field_value']?></textarea>
 	                        </li>
-                        <?php }?>
+                        <?php }
+                        	}
+                        ?>
+                        <?php if(!empty($value['tipo_categoria']) ){ ?>
+                    		 <li><input type="text" name="tipo_categoria" id="tipo_categoria" value="<?= $value['tipo_categoria']?>" style="display: none;" ></li>
+                    		 <li><input type="text" name="idPublicacion" id="idPublicacion" value="<?= $value['idPublicacion']?>" style="display: none;" ></li>
+                    		  
+                    	<?php }?>
                         <?php }?>
                     </ul>
                 </form>
                 <div id="btn-save-info">
-                    <input type="button" name="btnSave" value="Guardar" onclick="SaveInfo();">
+                    <input type="button" name="btnSave" value="Guardar" onclick="SaveInfoEditada();">
                 </div>
             </div>
         </div>
