@@ -125,9 +125,9 @@ $form = array('id' => 'loginform');
 			</div>
 		</div>
                 <?php if ($this->session->userdata('usuario_id')) {?>
-		<a class="publicar" href="<?php echo base_url(); ?>index.php/Publicar/publicar">Publica su Anuncio gratis</a>
+		<a class="publicar" href="<?php echo base_url(); ?>index.php/Publicar/publicar">Mapee gratis su anuncio</a>
                 <?php } else { ?>
-                <a class="publicar" href="<?php echo base_url(); ?>index.php/Register/register">Publica su Anuncio gratis</a>
+                <a class="publicar" href="<?php echo base_url(); ?>index.php/Register/register">Mapee gratis su anuncio</a>
                 <?php } ?>
 	</div>
 </div>

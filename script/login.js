@@ -50,7 +50,7 @@ function loginUser(){
             },
             success:function(data){
                 if(data !== null || !emtpy(data)){
-                    alert("Inicio sesion correctamente!!");
+                    
                     window.location.href = "index.php/Login/adminuser";
                 }else{
                    alert("No Inicio sesion correctamente!!");
