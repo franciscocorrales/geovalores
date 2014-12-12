@@ -70,6 +70,7 @@ class Inicio extends CI_Controller {
 	{
                
 		$title["title"] = "GeoValores";
+                $title["dondeestoy"] = "Inicio";
                 $title['mapa'] = TRUE;
                 $title["publicaciones"] = $this->InicioModel->selectJoinPublicaciones('publicaciones','details_fields');
 		$this->load->view('Inicio', $title);

@@ -78,7 +78,7 @@ $form = array('id' => 'loginform');
                             <fieldset id="actions">
                               <?=  form_button($submit)?>
 					
-                              <label><input type="checkbox" checked="checked"> Keep me signed in</label>
+                                <label><input type="hidden" name="dondeestoy" id="dondeestoy" value="<?php echo @$dondeestoy ?>" ></label>
                             </fieldset>
                           <?=form_close()?>
                         </div>                     
@@ -96,11 +96,11 @@ $form = array('id' => 'loginform');
 		<div id="mainnavigation">
 			<div id="nav-gutter">
 				<ul id="nav" class="mainmenu">
-					<li class="mainmenu-item mainmenu-item-5346 active first"><a href="<?php echo base_url(); ?>index.php"><span>Inicio</span></a></li>
-					<li class="mainmenu-item mainmenu-item-5380  "><a href="<?php echo base_url(); ?>index.php/Quienessomos/quienessomos"><span>Quienes Somos</span></a></li>
-					<li class="mainmenu-item mainmenu-item-5381  "><a href="/"><span>Comprar</span></a></li>
-					<li class="mainmenu-item mainmenu-item-5441  "><a href="/"><span>Venta</span></a></li>
-					<li class="mainmenu-item mainmenu-item-5382  last"><a href="<?php echo base_url(); ?>index.php/Contacto"><span>Contacto</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5346 <?php if ($dondeestoy == 'Inicio'){echo 'active';} ?>  first"><a href="<?php echo base_url(); ?>index.php"><span>Inicio</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5380 <?php if ($dondeestoy == 'Quienes Somos'){echo 'active';} ?>  "><a href="<?php echo base_url(); ?>index.php/Quienessomos/quienessomos"><span>Quienes Somos</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5381 <?php if ($dondeestoy == 'compra'){echo 'active';} ?> "><a href="/"><span>Comprar</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5441 <?php if ($dondeestoy == 'venta'){echo 'active';} ?> "><a href="/"><span>Venta</span></a></li>
+					<li class="mainmenu-item mainmenu-item-5382 <?php if ($dondeestoy == 'Contacto'){echo 'active';} ?> last"><a href="<?php echo base_url(); ?>index.php/Contacto"><span>Contacto</span></a></li>
 				</ul>
 				<div style="clear: left"></div>
 			</div>
@@ -125,6 +125,11 @@ $form = array('id' => 'loginform');
 			</div>
 		</div>
                 <?php if ($this->session->userdata('usuario_id')) {?>
+                <style>
+                    #header .publicar {
+                        margin-right: -265px;
+                    }
+                </style>
 		<a class="publicar" href="<?php echo base_url(); ?>index.php/Publicar/publicar">Mapee gratis su anuncio</a>
                 <?php } else { ?>
                 <a class="publicar" href="<?php echo base_url(); ?>index.php/Register/register">Mapee gratis su anuncio</a>

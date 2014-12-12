@@ -12,7 +12,8 @@
     min-height: 480px;
 }
 .form-btn {
-    margin-right: 29px;
+    margin-right: 3px;
+    margin-top: 0;
 }
 
 .box-register {
@@ -52,6 +53,7 @@
                                 <input type="radio" name="btn-notificacion" value="1" checked>Si
                                 <input type="radio" name="btn-notificacion" value="0" >No
                             </li>
+                            <li><input type="checkbox" id="leido" /><label for="leido">He leido y acepta las <a href="aviso-legal.php">condiciones del servicio</a>.</label></li>
                             <li><input class="form-btn" type="button" value="Registrarse" id="btn-save" onclick="registerUser();"></li>
                             <li><a class="publicar-type" href="<?php echo base_url(); ?>index.php/Publicar/contrucciones" style="display: none">Siguiente</a></li>
                         </ul>

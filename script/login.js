@@ -24,6 +24,8 @@ function loginUser(){
     var name = $('#username').val();
    
     var pass = $('#password').val();
+    
+    var dondeestoy = $('#dondeestoy').val();
    
     var error = false;
     
@@ -36,14 +38,30 @@ function loginUser(){
         error = true;
         $('#password').addClass('errorClas');
     }
-    
+    var url;
+    var url2;
+    if(dondeestoy == 'Inicio'){
+        url = 'index.php/Login/new_user';
+        url2 = "index.php/Login/adminuser";
+    }
+    else if (dondeestoy == 'register' || dondeestoy == 'Quienes Somos' )
+    {
+        url = '../Login/new_user';
+        url2 = "../Login/adminuser";
+    }
+    else if (dondeestoy != 'register' || dondeestoy != 'Inicio')
+    {
+        url = './Login/new_user';
+        url2 = "./Login/adminuser";
+    }
     
     
     if(error == false){
-        var url = $(location).attr('href');  
+        
          $.ajax({
             type:'POST',
-            url: 'index.php/Login/new_user',
+            url : url,
+            
             data:{
                 username:name,
                 password:pass
@@ -51,7 +69,7 @@ function loginUser(){
             success:function(data){
                 if(data !== null || !emtpy(data)){
                     
-                    window.location.href = "index.php/Login/adminuser";
+                    window.location.href = url2;
                 }else{
                    alert("No Inicio sesion correctamente!!");
                 }

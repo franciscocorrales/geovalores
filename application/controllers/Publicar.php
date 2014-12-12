@@ -63,18 +63,73 @@ class Publicar extends CI_Controller {
             $data["title_page"] = "Publicar Remates";
             $this->load->view('ventas/remates', $data);
         }
-        
+        public function guardarimagenes (){
+       
+       $status = "";
+    $msg = "";
+    $file_element_name = 'userfile';
+     
+    $temp_array;
+            foreach($_FILES['userfile'] as $key => $val)
+            {
+                $i = 0;
+                foreach($val as $new_key)
+                {
+                    $temp_array[$i][$key] = $new_key;
+                    $i++;
+                }
+                //
+            }
+
+            $i = 0;
+            foreach($temp_array as $key => $val)
+            {
+                $_FILES['userfile'.$i] = $val;
+                $i++;
+            }
+
+            #clear the original array;
+            unset($_FILES['userfile']);
+
+            $config['upload_path'] = './files/';
+            $config['allowed_types'] = 'gif|jpg|png|doc|txt';
+            $config['max_size'] = 1024 * 8;
+            $config['encrypt_name'] = TRUE;
+ 
+        $this->load->library('upload', $config);
+            $count = 1;
+            foreach($_FILES as $key => $value)
+            {     
+                
+                if( ! empty($value['name']))
+                {
+                    
+                    if($this->upload->do_upload($key))
+                    {                                           
+                       $saveimagen = $this->upload->data();
+                       $arraynombres['imagen'.$count] = $saveimagen['file_name'];
+                     }
+                }
+                $count++;
+            }
+            $this->session->set_userdata('imagenes',$arraynombres);
+    echo json_encode(array('status' => $status, 'msg' => $msg));
+        }
+
         public function saveInfo() {
             $this->load->model('DBModel');
-           	$data = $_POST['data'];
-                foreach ($_FILES["images"]["error"] as $key => $error) {
-                    if ($error == UPLOAD_ERR_OK) {
-                      $name = $_FILES["images"]["name"][$key];
-                      move_uploaded_file( $_FILES["images"]["tmp_name"][$key], "uploads/" . $_FILES['images']['name'][$key]);
-                    }
-                  }
+            $data = $_POST['data'];
             $array_data = array();
             $array_publicacion = array();
+            $imagenes = $this->session->userdata('imagenes');
+            foreach ( $imagenes as $key => $dat)
+            {
+                
+                $array_data[$key] = $dat;
+                
+                
+            }
+            
             $c=0;
             foreach ( $data as $dat)
             {

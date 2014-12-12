@@ -71,6 +71,9 @@
 					  if ($obj->field_name == 'lng') {   
 					  $newnode->setAttribute("lng", $obj->field_value);  
 					  }
+                                          if ($obj->field_name == 'imagen1') {   
+					  $newnode->setAttribute("photo", $obj->field_value);  
+					  }
 					  if ($i == 0) {
 					  	$newnode->setAttribute("type", $obj1->tipo_categoria);
 					  }

@@ -14,6 +14,7 @@ class Register extends CI_Controller {
 	{
 		$this->load->helper('html');
 		$title["title"] = "GeoValores";
+                $title["dondeestoy"] = "register";
 		$this->load->view('register/register', $title);
 	}
         

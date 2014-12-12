@@ -13,54 +13,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo link_tag("css/bootstrap.css");  ?>
     <?php echo link_tag("css/bootstrap-table.css");  ?>
     <?php echo link_tag("css/template.css");  ?>
+    <?php echo link_tag("css/jquery.fileupload.css");  ?>
     <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
+    
+    <script src=<?php echo base_url().'script/ajaxfileupload.js'?> ></script>
+    
     <script src=<?php echo base_url().'script/ventas.js'?> ></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="<?php echo base_url().'script/bootstrap-table.js' ?>"></script>
      <script type='text/javascript'>
             var map = null;
-var infoWindow = null;
- 
-function openInfoWindow(marker) {
-    var markerLatLng = marker.getPosition();
-    infoWindow.setContent([
-        '<strong>La posicion del marcador es:</strong><br/>',
-        markerLatLng.lat(),
-        ', ',
-        markerLatLng.lng(),
-        '<br/>Arrástrame para actualizar la posición.'
-    ].join(''));
-    $('#lng').val(markerLatLng.lng());
-    $('#lat').val(markerLatLng.lat());
-    infoWindow.open(map, marker);
-}
- 
-function initialize() {
-    var myLatlng = new google.maps.LatLng(9.633931465220899, -84.25418434999995);
-    var myOptions = {
-      zoom: 8,
-      center: myLatlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
- 
-    map = new google.maps.Map($("#google_map").get(0), myOptions);
- 
-    infoWindow = new google.maps.InfoWindow();
- 
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        draggable: true,
-        map: map,
-        title:"Ejemplo marcador arrastrable"
-    });
-        google.maps.event.addListener(marker, 'dragend', function(){ openInfoWindow(marker); });
-	google.maps.event.addListener(marker, 'click', function(){ openInfoWindow(marker); });
-}
- 
-$(document).ready(function() {
-    initialize();
-    
-});        </script>
+            var infoWindow = null;
+
+            function openInfoWindow(marker) {
+                var markerLatLng = marker.getPosition();
+                infoWindow.setContent([
+                    '<strong>La posicion del marcador es:</strong><br/>',
+                    markerLatLng.lat(),
+                    ', ',
+                    markerLatLng.lng(),
+                    '<br/>Arrástrame para actualizar la posición.'
+                ].join(''));
+                $('#lng').val(markerLatLng.lng());
+                $('#lat').val(markerLatLng.lat());
+                infoWindow.open(map, marker);
+            }
+
+            function initialize() {
+                var myLatlng = new google.maps.LatLng(9.633931465220899, -84.25418434999995);
+                var myOptions = {
+                  zoom: 8,
+                  center: myLatlng,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+
+                map = new google.maps.Map($("#google_map").get(0), myOptions);
+
+                infoWindow = new google.maps.InfoWindow();
+
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    draggable: true,
+                    map: map,
+                    title:"Aqui esta el marcador arrastrable"
+                });
+                    google.maps.event.addListener(marker, 'dragend', function(){ openInfoWindow(marker); });
+                    google.maps.event.addListener(marker, 'click', function(){ openInfoWindow(marker); });
+            }
+
+            $(document).ready(function() {
+                initialize();
+
+            });       
+        </script>
 	
 <style>
     #header > .bienvenido > h1 {
@@ -74,6 +79,10 @@ $(document).ready(function() {
 #header > .bienvenido > a{
     color: #ffffff;
 }
+.form-input {
+    height: 40px;
+}
+
 </style>
 </head>
 <body>

@@ -55,8 +55,9 @@ $("#send").click(function()
             var name    = $(this).attr('name');
             var address   = '<p>'+ $(this).attr('address') +'</p>';
             var type    = $(this).attr('type');
+            var photo    = $(this).attr('photo');
             var point   = new google.maps.LatLng(parseFloat($(this).attr('lat')),parseFloat($(this).attr('lng')));
-            create_marker(point, name, address, false, false, false, "icons/"+ type +".png");
+            create_marker(point, name, address, false, false, false, "icons/"+ type +".png", photo);
         });
 
 
@@ -100,8 +101,9 @@ $("#send").click(function()
             var name    = $(this).attr('name');
             var address   = $(this).attr('address');
             var type    = $(this).attr('type');
+            var photo    = $(this).attr('photo');
             var point   = new google.maps.LatLng(parseFloat($(this).attr('lat')),parseFloat($(this).attr('lng')));
-            create_marker(point, name, address, false, false, false, "icons/"+ type +".png");
+            create_marker(point, name, address, false, false, false, "icons/"+ type +".png", photo);
         });
       }); 
       
@@ -110,7 +112,7 @@ $("#send").click(function()
   }
 
 
-  function create_marker(MapPos, MapTitle, MapDesc,  InfoOpenDefault, DragAble, Removable, iconPath)
+  function create_marker(MapPos, MapTitle, MapDesc,  InfoOpenDefault, DragAble, Removable, iconPath, imagen)
   {             
     
     //new marker
@@ -129,7 +131,7 @@ $("#send").click(function()
     '<div class="marker-inner-win">'+
     '<h1 class="marker-heading">'+MapTitle+'</h1><span class="info-content"><p>'+
     texto+ 
-    '</p><img src="images/house.png" alt=""><div class="read-more"><a href=""><span>leer Más</span></a></div></span>'+
+    '</p><img src="files/'+imagen+'" alt=""><div class="read-more"><a href=""><span>leer Más</span></a></div></span>'+
     '</div></div>');  
 
     

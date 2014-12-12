@@ -1,8 +1,30 @@
  $(document).ready(function() {
-    
-	
-
  
+  $('.info-venta').submit(function(e) {
+		e.preventDefault();
+                 var $fileUpload = $("input[type='file']");
+                if (parseInt($fileUpload.get(0).files.length)>5){
+                 alert("Sólo se puede cargar un máximo de 5 archivos");
+                 return false;
+                }
+                
+		$.ajaxFileUpload({
+			url 			:'../Publicar/guardarimagenes', 
+			secureuri		:false,
+			fileElementId	:'userfile',
+			dataType		: 'json',
+			data			: {
+				'title'				: $('#title').val()
+			},
+			success	: function (msj, status)
+			{
+				
+				SaveInfo();
+			}
+		});
+		return false;
+	});
+     
  $("input[name=cochera]:radio").change(function(){
 	 var value = $(this).val();
 	 if(value == 'con-cochera')
@@ -22,6 +44,8 @@
  
  });
 
+     
+ 
 function SaveInfo()
 {
     var data =  $( ".info-venta" ).serializeArray();
@@ -71,7 +95,7 @@ function SaveInfo()
     }
 
     if( error !== true){
-	    $.ajax({
+	 $.ajax({
 	            type:'POST',
 	            url: '../Publicar/saveInfo',
 	            data:{
@@ -89,6 +113,7 @@ function SaveInfo()
 	                console.log('error1');
 	            }
 	        });
+         
     }
 }
 

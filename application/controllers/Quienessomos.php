@@ -14,6 +14,8 @@ class Quienessomos extends CI_Controller {
 	{
 		$this->load->helper(array('form','url','date','html'));
 		$title["title"] = "GeoValores";
+                $title["dondeestoy"] = "Quienes Somos";
+                
 		$this->load->view('quienessomos', $title);
 	}
 

@@ -33,6 +33,7 @@ $form = array('id' => 'loginform');
                 
                     
                         <div id="login-content">
+                            <h1>Inicio de Sesión</h1>
                           <?php echo form_open('/Login/new_user', $form)?>
                             <fieldset id="inputs">
                               <?php echo form_input($username)?><p><?=form_error('username')?>   
@@ -55,8 +56,9 @@ $form = array('id' => 'loginform');
     background: none repeat scroll 0 0 #f0f0f0;
     min-height: 450px;}
     .content-padding > #login-content {
-    margin: 85px 360px;
-    width: 250px;
+    margin: 0 auto;
+    width: 300px;
+    
 }
 </style>
 

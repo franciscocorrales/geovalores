@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://geovalores.techusodev.com/';
+$config['base_url'] = 'http://localhost/geovalores/';
 
 /*
 |--------------------------------------------------------------------------
@@ -248,7 +248,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 4;
 
 /*
 |--------------------------------------------------------------------------

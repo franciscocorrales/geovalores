@@ -8,7 +8,7 @@
             <div class="title-page"><h1><?php echo $title_page ?></h1></div>
             <?php include_once('/../columnMenu.php') ;?>
             <div class="box-publicar" id="publi-detalles">
-                <form name="info-venta" class="info-venta">
+                <form enctype="multipart/form-data" name="info-venta" class="info-venta">
                     <ul>
                         <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="remate" ></li>
                         <li><label>Titulo</label></li>

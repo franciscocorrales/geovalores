@@ -9,7 +9,7 @@ class Contacto extends CI_Controller {
        }
 
 function index(){
-	 	
+           $data["dondeestoy"] = "Contacto";
 	   $data['title'] = 'Formulario de Contacto'; 
 	   $data['msg'] = NULL;
 	   
@@ -65,14 +65,16 @@ function index(){
 			$this->email->message($message); 
 			
 			if($this->email->send()){
-			
+			$data["dondeestoy"] = "Contacto";
 			$data['title']='Mensaje Enviado';
 			$data['msg'] = 'Mensaje enviado a su email';
+                        
 	                 // echo $this->email->print_debugger(); exit;        					 
 		    $this->load->view('contacto', $data);  
 			
 			 }else{
 			    $data['title']='El mensaje no se pudo enviar';
+                            $data["dondeestoy"] = "Contacto";
 			    $this->load->view('contacto', $data); 
 			 
 			 } 

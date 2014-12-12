@@ -8,8 +8,13 @@ function registerUser(){
     var confPass = $('#txt-confPass').val();
     var notificacion =  $('input:radio[name=btn-notificacion]:checked').val();
     var correo =  $('#txt-correo').val();
+    var marcado = $('#leido').is(':checked');
     var error = false;
     
+    if (marcado == false){
+        alert('Debe aceptar la politica de privacidad');
+        return false;
+    }
     if(name == ""){
         error = true;
         $('#txt-nombre').addClass('errorClas');
@@ -58,10 +63,10 @@ function registerUser(){
             },
             success:function(data){
                 if(data !== null){
-                    confirm("Se registro correctamente!!");
-                    $(".publicar-type").show();
+                    alert("Se registro correctamente!!");
+                    window.location.href = "index.php/Login/adminuser";
                 }else{
-                   confirm("No se registro correctamente!!");
+                   alert("No se registro correctamente!!");
                 }
             },
             error:function(){
