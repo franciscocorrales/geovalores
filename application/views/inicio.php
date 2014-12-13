@@ -23,35 +23,36 @@
                                 </div>
                                <?php
                                $i = 0;
+                               $id = '';
+                               $print = false;
+                               $print_ob = false;
                                foreach ($publicaciones as $value){
-                                   
-                                   
-                               ?>    
+								if($i < 5){
+								?>    
                                
                                 <div class="news">
-                                    <?php
-                                     if ($i == 0) {
-                               ?>  
-                                   <div class="newDate">
-                                        <h4><?php echo $value['date_publicacion']?></h4>
-                                    </div>
-                                    <?php } ?>
-                                    <?php if ($value['field_name'] == "observacion") { ?>
+                                  <?php if ($value['field_name'] == "observacion") {  $print_ob = true; ?>
                                     <div class="newContent">
-                                        
-                                        <p><?php echo $value['field_value']?></p>
-                                       
+                                      <p><?php echo $value['field_value']?></p>
                                     </div>
                                     <?php  } ?>
-                                    <?php
-                                     if ($i == 0) {
-                               ?>  
-                                    <div class="read-more">
-                                        <a href="<?php echo $value['idPublicacion']?>" ><span>leer Más</span></a>
-                                    </div>
-                                     <?php } ?>
+                                     <?php if ($print == false && $print_ob == true) { ?>
+	                                  	<div class="newDate">
+	                                        <h4><?php echo $value['date_publicacion']?></h4>
+	                                    </div>
+	                                    <div class="read-more">
+	                                        <a href="<?php echo $value['idPublicacion']?>" ><span>leer Más</span></a>
+	                                    </div>
+                                    <?php $print = true;  } ?>
                                 </div>
-                               <?php $i++;  } ?>
+                               <?php 
+                               		if($id !== $value['idPublicacion']){
+                               			$print = false;
+                               			$i++;
+                               		}
+                               		$id = $value['idPublicacion'];
+                               		
+								 } } ?>
                             </div>
                         </div>   
                     </div>
