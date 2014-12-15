@@ -1,7 +1,8 @@
+
 <?php
 $username = array('name' => 'username', 'placeholder' => 'Nombre de usuario');
 $password = array('name' => 'password',	'placeholder' => 'Introduce tu password');
-$submit = array('name' => 'submit', 'id' => 'loginboton', 'value' => 'Iniciar sesión', 'title' => 'Iniciar sesión');
+$submit = array('name' => 'submit', 'id' => 'loginboton', 'value' => 'Iniciar sesión', 'title' => 'Iniciar sesión', 'onclick' => "loginUser();");
 $form = array('id' => 'loginform');
 ?>
 <?php include ("headeradmin.php") ;?>
@@ -42,7 +43,7 @@ $form = array('id' => 'loginform');
                             <fieldset id="actions">
                               <?php echo  form_submit($submit)?>
 					
-                              <label><input type="checkbox" checked="checked"> Keep me signed in</label>
+                              <label></label>
                             </fieldset>
                           <?php echo form_close()?>
                         </div>                     

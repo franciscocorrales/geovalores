@@ -44,7 +44,7 @@ function loginUser(){
         url = 'index.php/Login/new_user';
         url2 = "index.php/Login/adminuser";
     }
-    else if (dondeestoy == 'register' || dondeestoy == 'Quienes Somos' )
+    else if (dondeestoy == 'register' || dondeestoy == 'Quienes Somos' || dondeestoy == 'Politicas' || dondeestoy == 'admin' )
     {
         url = '../Login/new_user';
         url2 = "../Login/adminuser";

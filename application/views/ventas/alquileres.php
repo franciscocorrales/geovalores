@@ -17,6 +17,10 @@
                         <li><input type="hidden" name="tipo_categoria" id="tipo_categoria" value="alquileres" ></li>
                         <li><label>Titulo</label></li>
                         <li><input type="text" name="name" id="name" value="" required></li>
+                        <li><label>Fotos</label></li>
+                        <li>
+                            <input class="custom-file-input" id="userfile" type="file" name="userfile[]" multiple/>
+                        </li>
                          <li><label>Tiempo de la Publicacion</label></li>
                         <li>
                             <select name="tiempo" id="tiempo">
@@ -170,10 +174,11 @@
                             <textarea rows="5" name="observacion" id="observacion"> </textarea>
                         </li>
                     </ul>
+                    <div id="btn-save-info">
+                    <input type="submit" name="submit" value="Guardar" id="submit" />
+                    </div>
                 </form>
-                <div id="btn-save-info">
-                    <input type="button" name="btnSave" value="Guardar" onclick="SaveInfo();">
-                </div>
+                
             </div>
         </div>
     </div>

@@ -122,6 +122,7 @@ class Publicar extends CI_Controller {
             $array_data = array();
             $array_publicacion = array();
             $imagenes = $this->session->userdata('imagenes');
+            if(!empty($imagenes)){
             foreach ( $imagenes as $key => $dat)
             {
                 
@@ -129,7 +130,7 @@ class Publicar extends CI_Controller {
                 
                 
             }
-            
+            }
             $c=0;
             foreach ( $data as $dat)
             {
@@ -167,7 +168,8 @@ class Publicar extends CI_Controller {
             }
             
             if($msj == true){
-            	echo true;
+                echo $id_publicacion;
+            	
             }else{
             	echo false;
             }

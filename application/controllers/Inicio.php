@@ -75,6 +75,14 @@ class Inicio extends CI_Controller {
                 $title["publicaciones"] = $this->InicioModel->selectJoinPublicaciones('publicaciones','details_fields');
 		$this->load->view('Inicio', $title);
 	}
+        
+        public function politicas()
+	{
+               
+		$title["title"] = "GeoValores";
+                $title["dondeestoy"] = "Politicas";
+                $this->load->view('politicas', $title);
+	}
 
 	public function mapa(){
 			$obj=$this->getmapainiciomodel();

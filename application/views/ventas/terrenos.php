@@ -41,10 +41,16 @@
                                 </optgroup>
                             </select>
                         </li>
-                        <li><label>Precio Dolares</label></li>
-                        <li><input type="text" name="precio-dolar" id="precio-dolar" value="" class="numbersOnly form-input"></li>
-                        <li><label>Precio Colores</label></li>
-                        <li><input type="text" name="precio-colones" id="precio-colones" value="" class="numbersOnly form-input" ></li>
+                        <li><label>Precio</label></li>
+                        
+                        <li>
+                            <select class="form-input" name="moneda" id="moneda">
+                                <optgroup>
+                                    <option value="colones">₡</option>
+                                    <option value="dolares">$</option>
+                                </optgroup>
+                            </select>
+                            <input type="text" name="precio-dolar" id="precio-dolar" value="" class="form-input numbersOnly"><input type="text" name="precio-colones" id="precio-colones" value="" class="form-input numbersOnly" ></li>
                         <li><label>Direccion (Arrastrar el marcador para actualizar la posición)</label></li>
                         <li>
                             <div class="local-map">
@@ -52,7 +58,7 @@
                             </div>
                         </li>
                         <li>
-                            <input type="text" name="lat" id="lat" value="" class="numbersOnly form-input"/>
+                            <input type="text" name="lat" id="lat" value="" class="form-input numbersOnly"/>
                             <input type="text" name="lng" id="lng" value="" class="numbersOnly form-input"/>
                         </li>
                         <li><label>Direccion</label></li>
@@ -97,7 +103,7 @@
                             <textarea class="form-input" rows="5" name="observacion" id="observacion"> </textarea>
                         </li>
                     </ul>
-                     <div id="btn-save-info">
+                    <div id="btn-save-info">
                     <input type="submit" name="submit" value="Guardar" id="submit" />
                     </div>
                 </form>

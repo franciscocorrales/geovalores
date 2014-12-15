@@ -1,8 +1,12 @@
  $(document).ready(function() {
- 
+ $('#precio-dolar').hide();
   $('.info-venta').submit(function(e) {
 		e.preventDefault();
                  var $fileUpload = $("input[type='file']");
+                 if (parseInt($fileUpload.get(0).files.length)== 0){
+                     alert("Tiene que subir por menos una imagen");
+                     return false;
+                 }
                 if (parseInt($fileUpload.get(0).files.length)>5){
                  alert("Sólo se puede cargar un máximo de 5 archivos");
                  return false;
@@ -18,7 +22,6 @@
 			},
 			success	: function (msj, status)
 			{
-				
 				SaveInfo();
 			}
 		});
@@ -36,7 +39,21 @@
 		 $('.cant-carros').hide();
 	 }
 	});
- 
+ $("#moneda").change(function(){
+	 var value = $(this).val();
+	 if(value == 'colones')
+	 {
+		 $('#precio-colones').show();
+	 
+		 $('#precio-dolar').hide();
+	 }
+         if(value == 'dolares')
+	 {
+		 $('#precio-dolar').show();
+	 
+		 $('#precio-colones').hide();
+	 }
+	});
  
  $('.numbersOnly').keyup(function () { 
 	    this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -51,8 +68,7 @@ function SaveInfo()
     var data =  $( ".info-venta" ).serializeArray();
     
     var titulo = $('#titulo').val();
-    var precioDolares = $('#precio-dolar').val();
-    var precioColones =  $('#precio-colones').val();
+   
     var edadContruccion =  $('#edad-contruccion').val();
     var tamanoFrente = $('#tamano-frente').val();  
     var precioRemate = $('#precio-remate').val(); 
@@ -64,10 +80,7 @@ function SaveInfo()
         $('#titulo').addClass('errorClas');
     }
     
-    if(precioDolares == ""){
-        error = true;
-        $('#precio-dolar').addClass('errorClas');
-    }
+   
     
     if(tamanoTerreno == ""){
         error = true;
@@ -79,10 +92,7 @@ function SaveInfo()
         $('##precio-remate').addClass('errorClas');
     }
     
-    if(precioColones == ""){
-        error = true;
-        $('#precio-colones').addClass('errorClas');
-    }
+   
     
     if(edadContruccion == ""){
         error = true;
@@ -104,7 +114,7 @@ function SaveInfo()
 	            success:function(data){
 	                if(data !== null){
 	                    alert("Se registro correctamente!!");
-	                    $(".publicar-type").show();
+	                    window.location.href = "../Publicadas/editar/"+data;
 	                }else{
 	                   alert("No se registro correctamente!!");
 	                }
@@ -117,75 +127,7 @@ function SaveInfo()
     }
 }
 
-function SaveInfo()
-{
-    var data =  $( ".info-venta" ).serializeArray();
-    
-    var titulo = $('#titulo').val();
-    var precioDolares = $('#precio-dolar').val();
-    var precioColones =  $('#precio-colones').val();
-    var edadContruccion =  $('#edad-contruccion').val();
-    var tamanoFrente = $('#tamano-frente').val();  
-    var precioRemate = $('#precio-remate').val(); 
-    var tamanoTerreno = $('#tamano-terreno').val();
-    var error = false;
-    
-    if(titulo == ""){
-        error = true;
-        $('#titulo').addClass('errorClas');
-    }
-    
-    if(precioDolares == ""){
-        error = true;
-        $('#precio-dolar').addClass('errorClas');
-    }
-    
-    if(tamanoTerreno == ""){
-        error = true;
-        $('#tamano-terreno').addClass('errorClas');
-    }
-    
-    if(precioRemate == ""){
-        error = true;
-        $('##precio-remate').addClass('errorClas');
-    }
-    
-    if(precioColones == ""){
-        error = true;
-        $('#precio-colones').addClass('errorClas');
-    }
-    
-    if(edadContruccion == ""){
-        error = true;
-        $('#edad-contruccion').addClass('errorClas');
-    }
-    
-    if(tamanoFrente == ""){
-        error = true;
-        $('#tamano-frente').addClass('errorClas');
-    }
 
-    if( error !== true){
-	    $.ajax({
-	            type:'POST',
-	            url: '../Publicar/saveInfo',
-	            data:{
-	                data:data
-	            },
-	            success:function(data){
-	                if(data !== null){
-	                    alert("Se registro correctamente!!");
-	                    $(".publicar-type").show();
-	                }else{
-	                   alert("No se registro correctamente!!");
-	                }
-	            },
-	            error:function(){
-	                console.log('error1');
-	            }
-	        });
-    }
-}
 
 
 
@@ -195,8 +137,7 @@ function SaveInfoEditada()
     var data =  $( ".info-venta" ).serializeArray();
     var idPublicacion = $('#idPublicacion').val();
     var titulo = $('#titulo').val();
-    var precioDolares = $('#precio-dolar').val();
-    var precioColones =  $('#precio-colones').val();
+   
     var edadContruccion =  $('#edad-contruccion').val();
     var tamanoFrente = $('#tamano-frente').val();  
     var precioRemate = $('#precio-remate').val(); 
@@ -208,10 +149,7 @@ function SaveInfoEditada()
         $('#titulo').addClass('errorClas');
     }
     
-    if(precioDolares == ""){
-        error = true;
-        $('#precio-dolar').addClass('errorClas');
-    }
+   
     
     if(tamanoTerreno == ""){
         error = true;
@@ -223,10 +161,7 @@ function SaveInfoEditada()
         $('##precio-remate').addClass('errorClas');
     }
     
-    if(precioColones == ""){
-        error = true;
-        $('#precio-colones').addClass('errorClas');
-    }
+    
     
     if(edadContruccion == ""){
         error = true;

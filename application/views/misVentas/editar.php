@@ -1,4 +1,10 @@
 <?php include_once('/../headeradmin.php') ;?>
+<style>
+    
+.imagenes {
+    height: 150px;
+}
+</style>
 <script src=<?php echo base_url().'script/ventas.js'?> ></script>
 <div id="siteframe">
     <div id="content">
@@ -21,7 +27,72 @@
                     		<li><label>Titulo</label></li>
                         	<li><input type="text" name="name" id="name" value="<?= $value['field_value']?>" required></li>
                     	<?php } ?>
-                        
+                        <?php if($value['field_name'] == "imagen1"){ 
+                        $imagen1 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 1',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 1',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen Principal</label></li>
+                                <li><?php echo img($imagen1);?></li>
+                    	<?php } ?>
+                        <?php if($value['field_name'] == "imagen2"){ 
+                        $imagen2 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 2',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 2',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen</label></li>
+                                <li><?php echo img($imagen2);?></li>
+                    	<?php } ?>
+                        <?php if($value['field_name'] == "imagen3"){ 
+                        $imagen3 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 3',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 3',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen </label></li>
+                                <li><?php echo img($imagen3);?></li>
+                    	<?php } ?> 
+                        <?php if($value['field_name'] == "imagen4"){ 
+                        $imagen4 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 4',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 4',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen</label></li>
+                                <li><?php echo img($imagen4);?></li>
+                    	<?php } ?>
+                        <?php if($value['field_name'] == "imagen5"){ 
+                        $imagen5 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 5',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 5',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen</label></li>
+                                <li><?php echo img($imagen5);?></li>
+                    	<?php } ?>
+            
                         <?php if($value['field_name'] == "tiempo"){ ?>
                     		<li><label>Tiempo de la Publicacion</label></li>
 	                        <li>
@@ -50,13 +121,13 @@
 	                        </li>
 						 <?php } ?>
                         
-                        <?php if($value['field_name'] == "precio-dolar"){ ?>
+                        <?php if($value['field_name'] == "precio-dolar" && !empty($value['field_value'])){ ?>
                     		<li><label>Precio Dolares</label></li>
                         	<li><input type="text" name="precio-dolar" id="precio-dolar" value="<?= $value['field_value'] ?>"  class="numbersOnly"></li>
 						 <?php } ?>
                         
-                        <?php if($value['field_name'] == "precio-colones"){ ?>
-                    		<li><label>Precio Colores</label></li>
+                        <?php if($value['field_name'] == "precio-colones" && !empty($value['field_value'])){ ?>
+                    		<li><label>Precio Colones</label></li>
                         	<li><input type="text" name="precio-colones" id="precio-colones" value="<?= $value['field_value'] ?>" class="numbersOnly" ></li>
                         	<li style="display: none;"><input type="text" name="precio-old" id="precio-remate-old" value="<?= $value['field_value']?>" class="numbersOnly"></li>
 						 <?php } ?>
@@ -146,7 +217,7 @@
 	                        <li>
 	                            <select name="cantidad-pisos" id="cantidad-pisos">
 	                                <?php
-	                                    for ($i=0; $i<=100; $i++)
+	                                    for ($i=0; $i<=10; $i++)
 	                                    {
 	                                         if($i === 0){
 	                                        ?>

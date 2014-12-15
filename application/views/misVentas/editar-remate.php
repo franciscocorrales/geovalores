@@ -17,6 +17,71 @@
 	                        <li><label>Titulo</label></li>
 	                        <li><input type="text" name="name" id="name" value="<?= $value['field_value']?>" required></li>
                         <?php }?>
+                        <?php if($value['field_name'] == "imagen1"){ 
+                        $imagen1 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 1',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 1',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen Principal</label></li>
+                                <li><?php echo img($imagen1);?></li>
+                    	<?php } ?>
+                        <?php if($value['field_name'] == "imagen2"){ 
+                        $imagen2 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 2',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 2',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen</label></li>
+                                <li><?php echo img($imagen2);?></li>
+                    	<?php } ?>
+                        <?php if($value['field_name'] == "imagen3"){ 
+                        $imagen3 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 3',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 3',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen </label></li>
+                                <li><?php echo img($imagen3);?></li>
+                    	<?php } ?> 
+                        <?php if($value['field_name'] == "imagen4"){ 
+                        $imagen4 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 4',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 4',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen</label></li>
+                                <li><?php echo img($imagen4);?></li>
+                    	<?php } ?>
+                        <?php if($value['field_name'] == "imagen5"){ 
+                        $imagen5 = array(
+                                'src' => 'files/'.$value['field_value'],
+                                'alt' => 'Su imagen 5',
+                                'class' => 'imagenes',
+
+                                'title' => 'Su imagen 5',
+
+                      );    
+                        ?>
+                    		<li><label>Imagen</label></li>
+                                <li><?php echo img($imagen5);?></li>
+                    	<?php } ?>
                         <?php if($value['field_name'] == "tiempo"){ ?>
 	                         <li><label>Tiempo de la Publicacion</label></li>
 	                        <li>

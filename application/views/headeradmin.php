@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo link_tag("css/template.css");  ?>
     <?php echo link_tag("css/jquery.fileupload.css");  ?>
     <script type="text/javascript" src="<?php echo base_url().'script/jquery-1.10.2.min.js' ?>"></script>
-    
+    <script src=<?php echo base_url().'script/login.js'?> ></script>
     <script src=<?php echo base_url().'script/ajaxfileupload.js'?> ></script>
     
     <script src=<?php echo base_url().'script/ventas.js'?> ></script>
@@ -68,6 +68,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </script>
 	
 <style>
+    #moneda {
+    width: 70px;
+}
     #header > .bienvenido > h1 {
     font-size: 20px;
     line-height: 20px;

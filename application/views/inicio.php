@@ -34,11 +34,15 @@
                                   <?php if ($value['field_name'] == "observacion") {  $print_ob = true; ?>
                                     <div class="newContent">
                                       <p><?php echo $value['field_value']?></p>
+                                      <?php if ($value['field_name'] == "imagen1") {  $print_ob = true; ?>          
+                                                <img src="/file/<?php echo $value['field_value']?>" >
+                                       <?php  } ?> 
                                     </div>
                                     <?php  } ?>
                                      <?php if ($print == false && $print_ob == true) { ?>
 	                                  	<div class="newDate">
 	                                        <h4><?php echo $value['date_publicacion']?></h4>
+                                      
 	                                    </div>
 	                                    <div class="read-more">
 	                                        <a href="<?php echo $value['idPublicacion']?>" ><span>leer Más</span></a>

@@ -63,6 +63,7 @@ class Login extends CI_Controller
 	{
 		
 		$title['title'] = 'Bienvenido Administrador';
+                $title["dondeestoy"] = "admin";
 		$this->load->view('admin',$title);
 	}
 }
